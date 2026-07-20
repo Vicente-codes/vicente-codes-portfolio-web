@@ -1,7 +1,14 @@
 import React from "react";
 import '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBriefcase } from '@fortawesome/free-solid-svg-icons';
+// Brand icons import
+import { 
+  faReact, 
+  faSistrix, 
+  faWordpressSimple,
+} from '@fortawesome/free-brands-svg-icons'; 
+// Solid icons import (Fixed: faDatabase and faBrain are now imported from the correct package)
+import { faMicrochip } from '@fortawesome/free-solid-svg-icons';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import '../assets/styles/Timeline.scss';
@@ -16,11 +23,10 @@ function Timeline() {
           {/* 1. Frontend Developer - NTT DATA (CaixaBank) */}
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
-            contentStyle={{ background: 'white', color: 'rgb(39, 40, 34)' }}
-            contentArrowStyle={{ borderRight: '7px solid white' }}
+            dateClassName="timeline-date-highlight"
             date="2026"
-            iconStyle={{ background: '#5000ca', color: '#fff' }}
-            icon={<FontAwesomeIcon icon={faBriefcase} />}
+            iconStyle={{ background: '#2ec5ca', color: '#fff' }}
+            icon={<FontAwesomeIcon icon={faReact} />}
           >
             <h3 className="vertical-timeline-element-title">Frontend Developer (React & JS)</h3>
             <h4 className="vertical-timeline-element-subtitle">NTT DATA (Proyecto CaixaBank)</h4>
@@ -33,9 +39,10 @@ function Timeline() {
           {/* 2. Responsable de Operaciones */}
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
+            dateClassName="timeline-date-highlight"
             date="2013 - 2025"
-            iconStyle={{ background: '#5000ca', color: '#fff' }}
-            icon={<FontAwesomeIcon icon={faBriefcase} />}
+            iconStyle={{ background: '#2ec5ca', color: '#fff' }}
+            icon={<FontAwesomeIcon icon={faMicrochip} />}
           >
             <h3 className="vertical-timeline-element-title">Responsable de Operaciones, Calidad y Procesos</h3>
             <h4 className="vertical-timeline-element-subtitle">Sector Industrial (Artes Gráficas)</h4>
@@ -48,14 +55,15 @@ function Timeline() {
           {/* 3. Web Manager & Growth Technologist */}
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
+            dateClassName="timeline-date-highlight"
             date="2013 - 2025 (Proyectos en paralelo)"
-            iconStyle={{ background: '#5000ca', color: '#fff' }}
-            icon={<FontAwesomeIcon icon={faBriefcase} />}
+            iconStyle={{ background: '#2ec5ca', color: '#fff' }}
+            icon={<FontAwesomeIcon icon={faWordpressSimple} />}
           >
             <h3 className="vertical-timeline-element-title">Web Manager & Growth Technologist</h3>
             <h4 className="vertical-timeline-element-subtitle">Proyectos Digitales</h4>
             <p>
-              Gestión técnica integral de portales web (WordPress) enfocada en la optimización de rendimiento (WPO) y UX/UI. 
+              Gestión técnica de portales web (WordPress) enfocada en la optimización de rendimiento (WPO) y UX/UI. 
               Ejecución y analítica de estrategias de captación digital y optimización del embudo de conversión para maximizar el ROI.
             </p>
           </VerticalTimelineElement>
@@ -63,9 +71,10 @@ function Timeline() {
           {/* 4. Analista SEO */}
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
+            dateClassName="timeline-date-highlight"
             date="2010 - 2011"
-            iconStyle={{ background: '#5000ca', color: '#fff' }}
-            icon={<FontAwesomeIcon icon={faBriefcase} />}
+            iconStyle={{ background: '#2ec5ca', color: '#fff' }}
+            icon={<FontAwesomeIcon icon={faSistrix} />}
           >
             <h3 className="vertical-timeline-element-title">Analista SEO</h3>
             <h4 className="vertical-timeline-element-subtitle">Tour Operador Internacional (Reino Unido)</h4>
