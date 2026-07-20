@@ -15,6 +15,7 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const drawerWidth = 240;
 const navItems = [['Tecnologías', 'expertise'], ['Experiencia', 'history'], ['Proyectos', 'projects'], ['Contacto', 'contact']];
@@ -46,14 +47,20 @@ function Navigation({parentToChild, modeChange}: any) {
     };
   }, []);
 
+  const location = useLocation();
+  const navigate = useNavigate();
+
   const scrollToSection = (section: string) => {
-    console.log(section)
-    const expertiseElement = document.getElementById(section);
-    if (expertiseElement) {
-      expertiseElement.scrollIntoView({ behavior: 'smooth' });
-      console.log('Scrolling to:', expertiseElement);  // Debugging: Ensure the element is found
-    } else {
-      console.error('Element with id "expertise" not found');  // Debugging: Log error if element is not found
+    if (location.pathname !== '/') {
+      // Estamos en otra página (ej. detalle de proyecto): navegamos a la
+      // home con el hash correspondiente; el scroll lo hace Home al montar.
+      navigate(`/#${section}`);
+      return;
+    }
+
+    const sectionElement = document.getElementById(section);
+    if (sectionElement) {
+      sectionElement.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
