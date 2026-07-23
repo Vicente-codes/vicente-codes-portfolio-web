@@ -44,19 +44,11 @@ function App() {
     const [mode, setMode] = useState<string>('light');
 
     const handleModeChange = () => {
-        if (mode === 'dark') {
-            setMode('light');
-        } else {
-            setMode('dark');
-        }
-    }
-
-    useEffect(() => {
-        window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
-      }, []);
+    setMode(prev => prev === 'dark' ? 'light' : 'dark');
+};
 
     return (
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <BrowserRouter>
         <div className={`main-container ${mode === 'dark' ? 'dark-mode' : 'light-mode'}`}>
             <Navigation parentToChild={{mode}} modeChange={handleModeChange}/>
             <ScrollToTop />
