@@ -1,4 +1,5 @@
-import React, {useState, useEffect} from "react";
+import React, { useEffect, useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {
   Main,
   Timeline,
@@ -7,28 +8,28 @@ import {
   Contact,
   Navigation,
   Footer,
+  ProjectDetail,
+  ScrollToTop,
 } from "./components";
 import FadeIn from './components/FadeIn';
 import './index.scss';
 
-function App() {
-    const [mode, setMode] = useState<string>('light');
-
-    const handleModeChange = () => {
-        if (mode === 'dark') {
-            setMode('light');
-        } else {
-            setMode('dark');
-        }
-    }
-
+function Home() {
     useEffect(() => {
-        window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
-      }, []);
+        document.title = "Vicente Codes | Full Stack Developer";
+
+        // Si venimos de otra ruta con un hash (#projects, #history...),
+        // hacemos scroll a esa sección una vez la home está montada.
+        if (window.location.hash) {
+            const id = window.location.hash.replace('#', '');
+            const element = document.getElementById(id);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    }, []);
 
     return (
-    <div className={`main-container ${mode === 'dark' ? 'dark-mode' : 'light-mode'}`}>
-        <Navigation parentToChild={{mode}} modeChange={handleModeChange}/>
         <FadeIn transitionDuration={700}>
             <Main/>
             <Expertise/>
@@ -36,8 +37,28 @@ function App() {
             <Project/>
             <Contact/>
         </FadeIn>
-        <Footer />
-    </div>
+    );
+}
+
+function App() {
+    const [mode, setMode] = useState<string>('light');
+
+    const handleModeChange = () => {
+    setMode(prev => prev === 'dark' ? 'light' : 'dark');
+};
+
+    return (
+    <BrowserRouter>
+        <div className={`main-container ${mode === 'dark' ? 'dark-mode' : 'light-mode'}`}>
+            <Navigation parentToChild={{mode}} modeChange={handleModeChange}/>
+            <ScrollToTop />
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/proyectos/:slug" element={<ProjectDetail />} />
+            </Routes>
+            <Footer />
+        </div>
+    </BrowserRouter>
     );
 }
 
