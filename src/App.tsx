@@ -18,8 +18,8 @@ function Home() {
     useEffect(() => {
         document.title = "Vicente Codes | Full Stack Developer";
 
-        // Si venimos de otra ruta con un hash (#projects, #history...),
-        // hacemos scroll a esa sección una vez la home está montada.
+        // If we come from another route with a hash (#projects, #history...),
+        // scroll to that section once the homepage is mounted.
         if (window.location.hash) {
             const id = window.location.hash.replace('#', '');
             const element = document.getElementById(id);
