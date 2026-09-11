@@ -19,6 +19,7 @@ import '../assets/styles/Expertise.scss';
 // 1. FRONTEND LABELS
 const labelsFrontend = [
   "React",
+  "TypeScript",
   "JavaScript (ES6+)",
   "HTML5",
   "CSS3",
@@ -70,12 +71,15 @@ const labelsDocker = [
 
 // 6. AI & LLM LABELS
 const labelsAi = [
-  "OpenAI API",
-  "LangChain",
-  "Ingeniería de Prompts",
-  "Bases de Datos Vectoriales",
-  "Hugging Face",
-  "Integración de IA"
+  "IA generativa",
+  "LLMs",
+  "Big Data",
+  "Ollama",
+  "Python",
+  "Machine Learning",
+  "Deep Learning",
+  "Modelos predictivos",
+  "Análisis de datos"
 ];
 
 function Expertise() {
@@ -89,7 +93,7 @@ function Expertise() {
           <div className="skill">
             <FontAwesomeIcon icon={faReact} size="3x"/>
             <h3>Desarrollo Front-end</h3>
-            <p>Construyo interfaces de usuario dinámicas, adaptables y altamente interactivas desde cero. Mi enfoque se centra en crear experiencias de usuario fluidas, diseños modernos y escribir código limpio y mantenible basado en componentes utilizando React y ES6+.</p>
+            <p>Desarrollo interfaces de usuario modernas y adaptables a cualquier dispositivo, ofreciendo experiencias fluidas, accesibles y mantenibles, aplicando las mejores prácticas de desarrollo con React y TypeScript/ES6+. Cuento con experiencia en la implementación de sistemas de diseño corporativos, optimización de rendimiento y arquitectura basada en componentes reutilizables.</p>
             <div className="flex-chips">
               <span className="chip-title">Tech stack:</span>
               {labelsFrontend.map((label, index) => (
@@ -102,7 +106,7 @@ function Expertise() {
           <div className="skill">
             <FontAwesomeIcon icon={faLaravel} size="3x"/>
             <h3>Arquitectura Back-end</h3>
-            <p>Diseño e implemento lógica de servidor robusta y APIs de negocio escalables. Cuento con experiencia en el desarrollo de entornos backend seguros utilizando Laravel (PHP) y Spring Boot (Java), garantizando un alto rendimiento e integraciones fiables.</p>
+            <p>Diseño e implemento arquitecturas de servidor robustas y APIs REST escalables. Cuento con formación especializada y proyectos desarrollados en la construcción de servicios seguros y de alto rendimiento utilizando Laravel (PHP) y Spring Boot (Java), garantizando integraciones fiables, código mantenible y escalabilidad en entornos de producción.</p>
             <div className="flex-chips">
               <span className="chip-title">Tech stack:</span>
               {labelsBackend.map((label, index) => (
@@ -115,7 +119,7 @@ function Expertise() {
           <div className="skill">
             <FontAwesomeIcon icon={faDatabase} size="3x"/>
             <h3>Gestión de Bases de Datos</h3>
-            <p>Especialista en estructurar, modelar y optimizar sistemas de datos. Trabajo con fluidez tanto en bases de datos SQL para restricciones relacionales complejas, como en soluciones NoSQL como MongoDB para manejar flujos de datos rápidos y flexibles.</p>
+            <p>Desarrollo sistemas de datos bien estructurados y optimizados. Cuento con preparación práctica en el manejo de bases de datos SQL para esquemas relacionales avanzados, así como en soluciones NoSQL (MongoDB) para entornos flexibles. Priorizo la integridad de los datos, la eficiencia en las consultas y la escalabilidad del modelo para soportar el crecimiento del negocio.</p>
             <div className="flex-chips">
               <span className="chip-title">Tech stack:</span>
               {labelsDatabases.map((label, index) => (
@@ -154,7 +158,7 @@ function Expertise() {
           <div className="skill">
             <FontAwesomeIcon icon={faBrain} size="3x"/>
             <h3>Integración de IA y LLMs</h3>
-            <p>Aporto inteligencia moderna a las aplicaciones web integrando modelos de lenguaje de última generación (LLMs) y APIs de IA generativa. Me enfoco en desarrollar funciones de automatización inteligente, flujos de prompts y sistemas de búsqueda semántica.</p>
+            <p>Integro modelos de lenguaje (LLMs) y servicios de IA generativa en el ecosistema web. Domino el despliegue local de IAs para entornos de desarrollo y la implementación de sistemas de búsqueda semántica, automatización y flujos de trabajo inteligentes.</p>
             <div className="flex-chips">
               <span className="chip-title">Tech stack:</span>
               {labelsAi.map((label, index) => (

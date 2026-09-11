@@ -15,69 +15,105 @@ function ProjectDetail() {
     }
   }, [project]);
 
-  //If the slug does not correspond to any known project, we return to the home page.
+  // If the slug does not correspond to any known project, we return to the home page.
   if (!project) {
     return <Navigate to="/" replace />;
   }
 
   return (
-    <div className="project-detail-container" id="project-detail">
-      <div className="items-container">
-        <Link to="/#projects" className="back-link">← Volver a proyectos</Link>
+    <div className="project-detail-container">
+      <Link to="/" className="back-link">
+        &larr; Volver a proyectos
+      </Link>
 
+      <header className="project-detail-header">
         <h1>{project.title}</h1>
-        <h2 className="project-detail-subtitle">{project.subtitle}</h2>
+        {project.dates && (
+          <p className="project-detail-dates">{project.dates}</p>
+        )}
+        <p className="project-detail-subtitle">{project.subtitle}</p>
 
         <div className="project-detail-stack">
           {project.stack.map((tech) => (
-            <Chip key={tech} className="chip" label={tech} />
+            <Chip key={tech} label={tech} size="small" />
           ))}
         </div>
+      </header>
 
-        <p className="project-detail-description">{project.fullDescription}</p>
+      {project.heroImage && (
+        <img
+          src={project.heroImage}
+          alt={`Captura principal de ${project.title}`}
+          className="project-detail-hero-image"
+        />
+      )}
 
-        {project.images.length > 0 && (
-          <img
-            src={project.images[0]}
-            alt={`Captura principal de ${project.title}`}
-            className="project-detail-hero-image"
-          />
-        )}
+      <p className="project-detail-description">{project.fullDescription}</p>
 
-        <div className="project-detail-sections">
-          {project.challenges.map((challenge) => (
-            <section className="project-detail-section" key={challenge.title}>
-              <h3 className="project-detail-section-title">{challenge.title}</h3>
-              <p className="project-detail-section-text">{challenge.description}</p>
+      {project.role && (
+        <section className="project-detail-role">
+          <h3 className="project-detail-section-subtitle">Rol y responsabilidades:</h3>
+          <p className="project-detail-section-text">{project.role}</p>
+        </section>
+      )}
+      
+      {project.challenges.length > 0 && (
+        <section className="project-detail-challenges">
+          <h2 className="project-detail-section-title">Retos técnicos resueltos</h2>
 
-              {challenge.images && challenge.images.length > 0 && (
-                <div
-                  className={`project-detail-section-images ${
-                    challenge.images.length > 1 ? "grid" : "single"
-                  }`}
-                >
-                  {challenge.images.map((image, index) => (
-                    <img
-                      key={index}
-                      src={image}
-                      alt={`${challenge.title} - imagen ${index + 1}`}
-                    />
-                  ))}
-                </div>
-              )}
-            </section>
-          ))}
-        </div>
+          <div className="project-detail-sections">
+            {project.challenges.map((challenge) => (
+              <div className="project-detail-section" key={challenge.title}>
+                <h3 className="project-detail-section-subtitle">{challenge.title}</h3>
+                
+                <p className="project-detail-section-text">{challenge.description}</p>
 
+                {challenge.images && challenge.images.length > 0 && (
+                  <div
+                    className={`project-detail-section-images ${
+                      challenge.images.length === 1 ? "single" : "grid"
+                    }`}
+                  >
+                    {challenge.images.map((image, index) => (
+                      <img
+                        key={index}
+                        src={image}
+                        alt={`${challenge.title} - imagen ${index + 1}`}
+                      />
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {project.result && (
+        <section className="project-detail-result">
+          <h2 className="project-detail-section-title">Resultado</h2>
+          <p className="project-detail-section-text">{project.result}</p>
+        </section>
+      )}
+
+      {project.collaborators && (
+        <section className="project-detail-collaborators">
+          <h2 className="project-detail-section-title">Colaboradores</h2>
+          <p className="project-detail-section-text">{project.collaborators}</p>
+        </section>
+      )}
+
+      {project.repoUrl && (
         <a
           href={project.repoUrl}
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
           className="project-detail-repo-link"
         >
-          <GitHubIcon /> Ver código en GitHub
+          <GitHubIcon fontSize="small" />
+          Ver repositorio
         </a>
-      </div>
+      )}
     </div>
   );
 }

@@ -8,7 +8,7 @@ import {
   faWordpressSimple,
 } from '@fortawesome/free-brands-svg-icons'; 
 // Solid icons import (Fixed: faDatabase and faBrain are now imported from the correct package)
-import { faMicrochip } from '@fortawesome/free-solid-svg-icons';
+import { faMicrochip, faPersonWalkingLuggage, faMapLocationDot } from '@fortawesome/free-solid-svg-icons';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import '../assets/styles/Timeline.scss';
@@ -20,7 +20,7 @@ function Timeline() {
         <h1>Experiencia</h1>
         <VerticalTimeline>
           
-          {/* 1. Frontend Developer - NTT DATA (CaixaBank) */}
+          {/* 1. Frontend Developer */}
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
             dateClassName="timeline-date-highlight"
@@ -29,9 +29,9 @@ function Timeline() {
             icon={<FontAwesomeIcon icon={faReact} />}
           >
             <h3 className="vertical-timeline-element-title">Frontend Developer (React & JS)</h3>
-            <h4 className="vertical-timeline-element-subtitle">NTT DATA (Proyecto CaixaBank)</h4>
+            <h4 className="vertical-timeline-element-subtitle">Consultora Tecnológica (Proyecto Banca)</h4>
             <p>
-              Desarrollo y optimización de plataformas web para el ecosistema financiero (CaixaBankNow y herramientas B2E). 
+              Desarrollo y optimización de plataformas web para el ecosistema financiero (App banca electrónica y herramientas B2E). 
               Implementación del Design System corporativo, integración de APIs REST, refactorización de código legacy y aseguramiento de la calidad mediante pruebas unitarias (Jest) bajo metodología Scrum.
             </p>
           </VerticalTimelineElement>
@@ -68,19 +68,35 @@ function Timeline() {
             </p>
           </VerticalTimelineElement>
 
-          {/* 4. Analista SEO */}
+          {/* 4. Coordinador de acogida */}
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
             dateClassName="timeline-date-highlight"
-            date="2010 - 2011"
+            date="2011 - 2012"
+            iconStyle={{ background: '#2ec5ca', color: '#fff' }}
+            icon={<FontAwesomeIcon icon={faMapLocationDot} />}
+          >
+            <h3 className="vertical-timeline-element-title">Coordinador de acogida</h3>
+            <h4 className="vertical-timeline-element-subtitle">Freelance (Reino Unido)</h4>
+            <p>
+              Onboarding e integración de estudiantes en instituciones educativas del Reino Unido (residencias, academias, universidades). 
+              Gestión de stakeholders, resolución de incidencias bajo presión, comunicación intercultural y priorización de tareas en entornos multilingües.
+            </p>
+          </VerticalTimelineElement>
+
+          {/* 5. Analista SEO */}
+          <VerticalTimelineElement
+            className="vertical-timeline-element--work"
+            dateClassName="timeline-date-highlight"
+            date="2010"
             iconStyle={{ background: '#2ec5ca', color: '#fff' }}
             icon={<FontAwesomeIcon icon={faSistrix} />}
           >
             <h3 className="vertical-timeline-element-title">Analista SEO</h3>
-            <h4 className="vertical-timeline-element-subtitle">Tour Operador Internacional (Reino Unido)</h4>
+            <h4 className="vertical-timeline-element-subtitle">Tour Operador (Reino Unido)</h4>
             <p>
-              Estrategias SEO On-Page y Off-Page para el posicionamiento orgánico en los mercados británico e hispanohablante. 
-              Localización de la plataforma web, auditorías técnicas colaborando con desarrolladores y optimización de arquitectura para maximizar la conversión.
+              Estrategias SEO On-Page y Off-Page para el posicionamiento orgánico de la web en los mercados británico e hispanohablante. 
+              Auditorías técnicas, optimización de UX/arquitectura web con desarrolladores y análisis de datos enfocados a maximizar la conversión y el ROI.
             </p>
           </VerticalTimelineElement>
 
