@@ -1,19 +1,24 @@
-import camisThumbnail from "../assets/images/cc-thumbnail.png";
-import home1 from "../assets/images/home1.png";
-import productos from "../assets/images/productos.png";
-import carrito from "../assets/images/carrito.png";
-import panelProductos from "../assets/images/panel-productos.png";
-import editar from "../assets/images/editar.png";
-import p1 from "../assets/images/p1.png";
-import p2 from "../assets/images/p2.png";
-import volumen from "../assets/images/volumen.png";
-import portfolioThumbnail from "../assets/images/portfolio-home2.png";
-import portfolioHero from "../assets/images/portfolio-home2.png";
-import vcTimeLine from "../assets/images/vc-tl-w.png";
-import vcHomeBlack from "../assets/images/vc-home-black.png";
-import vcProjectWhite from "../assets/images/vc-pp-w.png";
-import vcProjectDetailWhite from "../assets/images/vc-pd-w.png";
-import vcTechWhite from "../assets/images/vc-tech-w.png";
+//Custom Camis imgs
+import ccThumbnail from "../assets/images/cc-thumbnailMobile3.png";
+import ccHero from "../assets/images/ccHero.png";
+import ccProductos from "../assets/images/ccProductos.png";
+import ccVolumen from "../assets/images/ccVolumen.png";
+import ccCart from "../assets/images/ccCart.png";
+import ccP1 from "../assets/images/p1.png";
+import CCP2 from "../assets/images/p2.png";
+import ccPanel from "../assets/images/ccPanel.png";
+import ccEditar from "../assets/images/ccEditar.png";
+import ccMobileHome from "../assets/images/ccMobileHome.png";
+import ccMobileProducts from "../assets/images/ccMobileProducts.png";
+
+//Protfolio imgs
+import portfolioThumbnail from "../assets/images/vc-thumbnail3.png";
+import pHero from "../assets/images/pHero.png";
+import vcTimeLine from "../assets/images/vcTimeline.png";
+import vcProjects from "../assets/images/vcProjects.png";
+import vcProjectDetail from "../assets/images/ccHero.png";
+import vcMobileW from "../assets/images/canva-vc.white1.png";
+import vcMovilB from "../assets/images/canva-vc-black1.png";
 
 /**
  * A technical challenge solved within the project.
@@ -76,8 +81,8 @@ export const projects: Project[] = [
       "Docker",
       "Laravel Sail",
     ],
-    thumbnail: camisThumbnail,
-    heroImage: home1,
+    thumbnail: ccThumbnail,
+    heroImage: ccHero,
     role: `Diseñé y desarrollé el ciclo de vida completo de la aplicación, desde el modelo de datos hasta el despliegue, aplicando el patrón MVC de Laravel con una separación estricta entre lógica de negocio, persistencia y presentación.
       
           🔹 Desarrollo full-stack: Asumí el ciclo de vida completo del proyecto, desde el diseño del modelo de datos hasta el despliegue en producción, cubriendo frontend, backend y base de datos.
@@ -101,31 +106,31 @@ export const projects: Project[] = [
         title: "1. Motor de precios B2B dinámicos",
         description:
           "🔹 Diseñé un motor de precios dinámico que detecta automáticamente pedidos superiores a 100 unidades y recalcula el precio unitario en tiempo real mediante Accessors de Eloquent, sin intervención manual, replicando la lógica de descuento B2B de la empresa.",
-        images: [productos, volumen],
+        images: [ccProductos, ccVolumen],
       },
       {
         title: "2. Carrito multi-variante por talla",
         description:
           "🔹 Modelé relaciones N:M con atributos en tablas pivote (product_user) para permitir que un mismo producto conviva en el carrito como múltiples variantes independientes por talla (ej. 50 unidades talla M y 20 talla L), validando la coherencia producto-talla antes de cada inserción.",
-        images: [carrito],
+        images: [ccCart],
       },
       {
         title: "3. Modelo de datos normalizado",
         description:
           "🔹 Normalicé el esquema de base de datos en MySQL hasta 3FN sobre el motor InnoDB, garantizando integridad referencial (claves foráneas, ON DELETE CASCADE) y transacciones ACID para evitar líneas de pedido huérfanas.",
-        images: [p1, p2],
       },
       {
         title: "4. Panel de administración con RBAC",
         description:
           "🔹 Implementé un sistema de roles jerárquico (RBAC: Invitado, Cliente, Administrador) protegido con Middlewares personalizados, autenticación con hashing Bcrypt y protección CSRF en todos los formularios.",
-        images: [panelProductos, editar],
+        images: [ccPanel, ccEditar],
       },
       {
         title: "5. Interfaz responsive Mobile-First",
         description:
           "🔹 Construí una interfaz responsive Mobile-First con Blade y Tailwind CSS, añadiendo interactividad ligera con Alpine.js (selección obligatoria de tallas, flash messages, micro-animaciones en la vista de ofertas) sin necesidad de un framework JS pesado.",
-      },
+        images: [ccMobileHome, ccMobileProducts],
+        },
       {
         title: "6. Entorno contenerizado",
         description:
@@ -171,7 +176,7 @@ export const projects: Project[] = [
       "npm",
     ],
     thumbnail: portfolioThumbnail,
-    heroImage: portfolioHero,
+    heroImage: pHero,
     role: `
     🔹 Diseño y desarrollo de componentes reutilizables utilizando React y TypeScript.
     🔹 Implementación de un sistema de estilos personalizado mediante SASS y Material-UI.
@@ -195,7 +200,6 @@ export const projects: Project[] = [
         🔹 Construcción de un sistema de estilos propio utilizando SASS (SCSS), con soporte para tema claro/oscuro y estilos modulares.
         🔹 Integración de Material‑UI para incorporar componentes accesibles, consistentes y alineados con buenas prácticas de diseño.
       `,
-        images: [vcHomeBlack],
       },
       {
         title: "Navegación SPA",
@@ -203,7 +207,7 @@ export const projects: Project[] = [
         🔹 Implementación de una navegación SPA fluida mediante React Router, mejorando la experiencia de usuario y reduciendo tiempos de carga.
         🔹 Gestión de rutas dinámicas para mostrar páginas individuales de detalle de cada proyecto, permitiendo una presentación más completa y profesional del contenido.
       `,
-        images: [vcProjectWhite, vcProjectDetailWhite],
+        images: [vcProjects, vcProjectDetail],
       },
       {
         title: "Optimización de Rendimiento",
@@ -211,7 +215,6 @@ export const projects: Project[] = [
         🔹 Optimización de imágenes y assets para reducir el tamaño del bundle y mejorar el tiempo de carga.
         🔹 Aplicación de Lazy Loading en componentes e imágenes para mejorar el rendimiento percibido y la eficiencia del renderizado.
       `,
-      images: [vcTechWhite],
       },
       {
         title: "Experiencia de Usuario Intuitiva",
@@ -220,6 +223,7 @@ export const projects: Project[] = [
         🔹 Implementación de prácticas de accesibilidad (A11Y) para garantizar una experiencia inclusiva.
         🔹 Construcción de una interfaz clara, navegable y centrada en la experiencia del usuario.
       `,
+      images: [vcMovilB, vcMobileW],
       },
       {
         title: "Pruebas Unitarias",

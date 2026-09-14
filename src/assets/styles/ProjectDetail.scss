@@ -60,11 +60,13 @@
 }
 
 .project-detail-hero-image {
-    width: 100%;
-    height: auto;
-    border-radius: 16px;
-    display: block;
-    margin-bottom: 88px;
+align-self: center; /* Cancela el stretch de Flexbox y centra la imagen */
+  width: auto;         /* Respeta el ancho real de la imagen */
+  max-width: 100%;    /* Si la pantalla es más pequeña que la imagen, se escala para no desbordar */
+  height: auto;        /* Mantiene la relación de aspecto */
+  border-radius: 16px;
+  display: block;
+  margin-bottom: 88px;
 }
 
 /* Rol y responsabilidades: bloque de texto simple antes de los retos */
@@ -117,13 +119,24 @@
     grid-template-columns: 1fr;
 }
 
+/* FUERZA a la imagen individual a centrarse y tomar solo su ancho nativo */
+.project-detail-section-images.single img {
+    justify-self: center; /* Cancela el estiramiento en la celda Grid */
+    width: auto !important;
+    max-width: 100%;
+    height: auto;
+}
+
 .project-detail-section-images.grid {
     grid-template-columns: repeat(2, 1fr);
 }
 
-.project-detail-section-images img {
-    width: 100%;
+.project-detail-section-images.grid img {
+    width: 100%; /* Mantiene las dobles alineadas y simétricas */
     height: auto;
+}
+
+.project-detail-section-images img {
     border-radius: 12px;
     display: block;
 }

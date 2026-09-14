@@ -22,7 +22,7 @@ function ProjectDetail() {
 
   return (
     <div className="project-detail-container">
-      <Link to="/" className="back-link">
+      <Link to="/#projects" className="back-link">
         &larr; Volver a proyectos
       </Link>
 
