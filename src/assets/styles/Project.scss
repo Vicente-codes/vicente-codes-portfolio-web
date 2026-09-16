@@ -4,46 +4,85 @@
     padding: 5% 10%;
     text-align: left;
 }
-  
+
 .projects-container .projects-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 50px;
+    grid-gap: 30px;
+    justify-content: center; /* Centra las columnas */
 }
-  
-.projects-container .projects-grid .project {
-    text-align: left;
+
+.projects-container .projects-grid .project-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 28px 24px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background-color: rgba(255, 255, 255, 0.03);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    overflow: hidden;
+    width: 100%; /* Asegura que la tarjeta ocupe todo el ancho de la columna */
 }
-  
-.project h2:hover {
-    text-decoration: underline;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+
+.projects-container .projects-grid .project-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
 }
-  
-.zoom {
-    border-radius: 5px;
-    transition: transform .2s;
-    margin: 0 auto;
+
+.projects-container .projects-grid .project-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin-bottom: 16px;
+    transition: transform 0.2s;
 }
-  
-.zoom:hover {
-    transform: scale(1.05);
+
+.projects-container .projects-grid .project-card img:hover {
+}
+
+.projects-container .projects-grid .project-card h2 {
+    margin-top: 8px;
+    margin-bottom: 12px;
+    font-size: 1.5rem;
+}
+
+.projects-container .projects-grid .project-card p {
+    margin-bottom: 16px;
+    text-align: justify;
 }
 
 @media screen {
-    @media (max-width: 700px) {
+    @media (max-width: 992px) {
+        .projects-container .projects-grid {
+            grid-template-columns: 1fr;
+            justify-content: flex-start; /* Ajusta el centrado en pantallas más pequeñas */
+        }
+    }
+
+    @media (max-width: 768px) {
         .projects-container {
             display: block;
             padding-left: 5%;
             padding-right: 5%;
         }
-  
+
         .projects-container .projects-grid {
-            display: block;
+            grid-template-columns: 1fr;
+            grid-gap: 20px;
         }
-      
-        .projects-container .projects-grid .project {
-            padding-bottom: 5%;
+
+        .projects-container .projects-grid .project-card {
+            margin-bottom: 20px;
+        }
+    }
+
+    @media (max-width: 567px) {
+        .projects-container .projects-grid .project-card h2 {
+            font-size: 1.25rem;
         }
     }
 }

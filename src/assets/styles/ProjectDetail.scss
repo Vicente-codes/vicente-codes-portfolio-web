@@ -57,6 +57,7 @@
     line-height: 1.75;
     opacity: 0.75;
     margin: 0 0 56px;
+    text-align: justify;
 }
 
 .project-detail-hero-image {
@@ -72,11 +73,13 @@ align-self: center; /* Cancela el stretch de Flexbox y centra la imagen */
 /* Rol y responsabilidades: bloque de texto simple antes de los retos */
 .project-detail-role {
     margin-bottom: 80px;
+    text-align: justify;
 }
 
 /* Contenedor de los retos técnicos, agrupa el título de sección y los items */
 .project-detail-challenges {
     margin-bottom: 80px;
+    text-align: justify;
 }
 
 /* Section rhythm: generous vertical spacing, one column, image(s) beneath the text */
@@ -107,6 +110,7 @@ align-self: center; /* Cancela el stretch de Flexbox y centra la imagen */
     line-height: 1.8;
     opacity: 0.75;
     margin: 0;
+    text-align: justify;
 }
 
 .project-detail-section-images {

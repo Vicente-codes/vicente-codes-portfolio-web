@@ -7,7 +7,7 @@ import avatar from '../assets/images/avatar.png';
 function Main() {
 
   return (
-    <div className="container">
+    <div className="container" id="main">
       <div className="about-section">
         <div className="image-wrapper">
           <img src={avatar} alt="Avatar" />

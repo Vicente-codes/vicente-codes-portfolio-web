@@ -20,6 +20,8 @@ import vcProjectDetail from "../assets/images/ccHero.png";
 import vcMobileW from "../assets/images/canva-vc.white1.png";
 import vcMovilB from "../assets/images/canva-vc-black1.png";
 
+import vcTech from "../assets/images/vc-tech.png";
+
 /**
  * A technical challenge solved within the project.
  * Images are optional: not every challenge requires screenshots.
@@ -86,19 +88,12 @@ export const projects: Project[] = [
     role: `Diseñé y desarrollé el ciclo de vida completo de la aplicación, desde el modelo de datos hasta el despliegue, aplicando el patrón MVC de Laravel con una separación estricta entre lógica de negocio, persistencia y presentación.
       
           🔹 Desarrollo full-stack: Asumí el ciclo de vida completo del proyecto, desde el diseño del modelo de datos hasta el despliegue en producción, cubriendo frontend, backend y base de datos.
-
           🔹 Arquitectura: Diseñé la estructura MVC de Laravel, definiendo la separación entre lógica de negocio (controladores y modelos), persistencia (Eloquent + MySQL) y presentación (Blade + Tailwind).
-
           🔹 Modelado de datos: Normalicé el esquema relacional hasta 3FN, estableciendo relaciones uno-a-muchos y muchos-a-muchos con tablas pivote para gestionar variantes de producto y carritos.
-
           🔹 Lógica de negocio compleja: Implementé el motor de precios dinámicos con Accessors de Eloquent, validación de variantes en carritos y reglas B2B/B2C diferenciadas.
-
           🔹 Seguridad y autenticación: Configuré el sistema RBAC con middlewares personalizados, hashing Bcrypt para contraseñas y protección CSRF en todos los formularios.
-
           🔹 UI/UX responsive: Desarrollé interfaces mobile-first con Blade, Tailwind CSS y Alpine.js para validaciones en cliente y microinteracciones sin dependencias pesadas.
-
           🔹 Infraestructura y despliegue: Contenericé la aplicación con Docker y Laravel Sail, definiendo servicios para app, MySQL y Redis, y configurando Nginx como servidor web en producción.
-
           🔹 Gestión de transacciones: Aseguré la integridad de datos críticos (pedidos, stock, pagos) mediante transacciones ACID con rollback automático en caso de error.
       `,
     challenges: [
@@ -123,7 +118,6 @@ export const projects: Project[] = [
         title: "4. Panel de administración con RBAC",
         description:
           "🔹 Implementé un sistema de roles jerárquico (RBAC: Invitado, Cliente, Administrador) protegido con Middlewares personalizados, autenticación con hashing Bcrypt y protección CSRF en todos los formularios.",
-        images: [ccPanel, ccEditar],
       },
       {
         title: "5. Interfaz responsive Mobile-First",
@@ -187,54 +181,47 @@ export const projects: Project[] = [
   `,
     challenges: [
       {
-        title: "Arquitectura de Componentes Modular",
-        description: `
-        🔹 Diseño de una arquitectura basada en componentes reutilizables y desacoplados, facilitando la mantenibilidad y la evolución del proyecto.
+        title: "1. Arquitectura de Componentes Modular",
+        description: `🔹 Diseño de una arquitectura basada en componentes reutilizables y desacoplados, facilitando la mantenibilidad y la evolución del proyecto.
         🔹 Implementación de componentes clave como Project, ProjectDetail, ScrollToTop, entre otros, organizados para maximizar claridad y escalabilidad.
       `,
-        images: [vcTimeLine],
+        images: [vcTech],
       },
       {
-        title: "Sistema de Estilos Personalizado",
-        description: `
-        🔹 Construcción de un sistema de estilos propio utilizando SASS (SCSS), con soporte para tema claro/oscuro y estilos modulares.
+        title: "2. Sistema de Estilos Personalizado",
+        description: `🔹 Construcción de un sistema de estilos propio utilizando SASS (SCSS), con soporte para tema claro/oscuro y estilos modulares.
         🔹 Integración de Material‑UI para incorporar componentes accesibles, consistentes y alineados con buenas prácticas de diseño.
       `,
       },
       {
-        title: "Navegación SPA",
-        description: `
-        🔹 Implementación de una navegación SPA fluida mediante React Router, mejorando la experiencia de usuario y reduciendo tiempos de carga.
+        title: "3.Navegación SPA",
+        description: `🔹 Implementación de una navegación SPA fluida mediante React Router, mejorando la experiencia de usuario y reduciendo tiempos de carga.
         🔹 Gestión de rutas dinámicas para mostrar páginas individuales de detalle de cada proyecto, permitiendo una presentación más completa y profesional del contenido.
       `,
         images: [vcProjects, vcProjectDetail],
       },
       {
-        title: "Optimización de Rendimiento",
-        description: `
-        🔹 Optimización de imágenes y assets para reducir el tamaño del bundle y mejorar el tiempo de carga.
+        title: "4. Optimización de Rendimiento",
+        description: `🔹 Optimización de imágenes y assets para reducir el tamaño del bundle y mejorar el tiempo de carga.
         🔹 Aplicación de Lazy Loading en componentes e imágenes para mejorar el rendimiento percibido y la eficiencia del renderizado.
       `,
       },
       {
-        title: "Experiencia de Usuario Intuitiva",
-        description: `
-        🔹 Diseño responsive adaptado a distintos dispositivos y resoluciones.
+        title: "5. Experiencia de Usuario Intuitiva",
+        description: `🔹 Diseño responsive adaptado a distintos dispositivos y resoluciones.
         🔹 Implementación de prácticas de accesibilidad (A11Y) para garantizar una experiencia inclusiva.
         🔹 Construcción de una interfaz clara, navegable y centrada en la experiencia del usuario.
       `,
       images: [vcMovilB, vcMobileW],
       },
       {
-        title: "Pruebas Unitarias",
-        description: `
-        🔹 Desarrollo de pruebas unitarias con Jest y React Testing Library para asegurar la estabilidad y fiabilidad del código.
+        title: "6. Pruebas Unitarias",
+        description: `🔹 Desarrollo de pruebas unitarias con Jest y React Testing Library para asegurar la estabilidad y fiabilidad del código.
         🔹 Cobertura de componentes críticos como Project y ProjectDetail, validando su comportamiento y renderizado.
       `,
       },
     ],
-    result: `
-    El proyecto culmina en un portafolio web profesional diseñado para presentar habilidades y proyectos de forma clara, moderna y altamente optimizada. La plataforma actúa como un punto centralizado donde se muestra mi experiencia técnica, mi capacidad para estructurar aplicaciones React y mi enfoque en la calidad del código y la experiencia de usuario. Gracias a la arquitectura modular implementada, el sistema permite incorporar nuevos proyectos, secciones y mejoras sin comprometer la estabilidad ni la mantenibilidad.
+    result: `El proyecto culmina en un portafolio web profesional diseñado para presentar habilidades y proyectos de forma clara, moderna y altamente optimizada. La plataforma actúa como un punto centralizado donde se muestra mi experiencia técnica, mi capacidad para estructurar aplicaciones React y mi enfoque en la calidad del código y la experiencia de usuario. Gracias a la arquitectura modular implementada, el sistema permite incorporar nuevos proyectos, secciones y mejoras sin comprometer la estabilidad ni la mantenibilidad.
 
 Desde el punto de vista técnico, el portafolio se apoya en una arquitectura basada en React + TypeScript, lo que garantiza tipado estático, robustez y un flujo de desarrollo más seguro. El sistema de estilos, construido con SASS (SCSS) y complementado con Material‑UI, proporciona una interfaz responsive, accesible y visualmente coherente, con soporte para tema claro/oscuro y componentes reutilizables. La navegación SPA con React Router permite una experiencia fluida y sin recargas, incluyendo páginas dinámicas de detalle para cada proyecto, lo que demuestra dominio en la gestión de rutas y vistas dentro de aplicaciones front‑end modernas.
 

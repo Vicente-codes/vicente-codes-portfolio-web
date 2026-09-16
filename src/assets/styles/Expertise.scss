@@ -4,20 +4,77 @@
     flex-direction: column;
     text-align: left;
 
-    svg {
-        color: white;
+    /* Clases de color para los iconos de tecnologías */
+    .icon-react {
+        color: #61dafb !important;
+    }
+
+    .icon-laravel {
+        color: #ff2d20 !important;
+    }
+
+    .icon-database {
+        color: #4a5568 !important;
+    }
+
+    .icon-aws {
+        color: #ff9900 !important;
+    }
+
+    .icon-docker {
+        color: #2496ed !important;
+    }
+
+    .icon-brain {
+        color: #4dbd96 !important;
     }
 }
   
 .skills-container .skills-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 50px;
+    grid-gap: 30px; /* Reducido ligeramente de 50px a 30px para compensar el padding interno */
 }
   
+/* --- ESTILO TARJETA Y HOVER --- */
 .skills-container .skills-grid .skill {
-    align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     text-align: left;
+    
+    /* Diseño Base de la Tarjeta */
+    padding: 28px 24px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.12); /* Contorno sutil */
+    background-color: rgba(255, 255, 255, 0.03); /* Fondo con opacidad para acoplarse al tema */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Sombra ligera inicial */
+    
+    /* Transición fluida para el hover */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+
+    /* Ajuste de margen para los iconos dentro de la tarjeta */
+    svg {
+        margin-bottom: 12px;
+    }
+
+    h3 {
+        margin-top: 8px;
+        margin-bottom: 12px;
+    }
+
+    p {
+        flex-grow: 1; /* Permite que las tarjetas tengan la misma altura si el texto varía */
+        margin-bottom: 16px;
+        text-align: justify; /* Justifica el texto para una apariencia más limpia */
+    }
+
+    /* Efecto al pasar el ratón */
+    &:hover {
+        transform: translateY(-6px); /* Eleva la tarjeta */
+        border-color: rgba(255, 255, 255, 0.25); /* Resalta el contorno */
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18); /* Sombra más pronunciada */
+    }
 }
   
 .chip {
@@ -38,22 +95,22 @@
 
 .flex-chips {
     line-height: 2;
-    margin: 0.5;
+    margin-top: auto; /* Empuja las chips al final del contenedor de la tarjeta */
 
     .chip-title {
-        color: white;
+        color: inherit;
         padding-right: 10px;
     }
 }
 
 .flex-chips .MuiChip-root {
     margin-right: 0.5em;
+    margin-bottom: 0.5em;
 }
 
 .flex-chips .MuiChip-outlined {
     background-color: #e0e0e0;
-    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-        monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
 .flex-chips .MuiChip-outlined span {
@@ -61,6 +118,12 @@
 }
 
 @media screen {
+    @media (max-width: 992px) {
+        .skills-container .skills-grid {
+            grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
+        }
+    }
+
     @media (max-width: 768px) {
         .skills-container {
             display: block;
@@ -69,11 +132,12 @@
         }
     
         .skills-container .skills-grid {
-            display: initial;
+            grid-template-columns: 1fr; /* 1 columna en pantallas pequeñas */
+            grid-gap: 20px;
         }
         
         .skills-container .skills-grid .skill {
-            padding-bottom: 5%;
+            margin-bottom: 20px;
         }
     }
 
