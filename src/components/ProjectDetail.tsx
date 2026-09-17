@@ -4,6 +4,8 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import Chip from '@mui/material/Chip';
 import { getProjectBySlug } from "../data/projects";
 import '../assets/styles/ProjectDetail.scss';
+import Button from '@mui/material/Button';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 function ProjectDetail() {
   const { slug } = useParams<{ slug: string }>();
@@ -22,9 +24,15 @@ function ProjectDetail() {
 
   return (
     <div className="project-detail-container">
-      <Link to="/#projects" className="back-link">
-        &larr; Volver a proyectos
-      </Link>
+      <Button
+        component={Link}
+        to="/#projects"
+        className="back-button"
+        variant="contained"
+        startIcon={<ArrowBackIcon />}
+      >
+        Volver a proyectos
+      </Button>
 
       <header className="project-detail-header">
         <h1>{project.title}</h1>
@@ -104,16 +112,17 @@ function ProjectDetail() {
       )}
 
       {project.repoUrl && (
-        <a
-          href={project.repoUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="project-detail-repo-link"
-        >
-          <GitHubIcon fontSize="small" />
-          Ver repositorio
-        </a>
-      )}
+  <Button
+    href={project.repoUrl}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="repo-button"
+    variant="contained"
+    startIcon={<GitHubIcon />}
+  >
+    Ver repositorio
+  </Button>
+)}
     </div>
   );
 }
