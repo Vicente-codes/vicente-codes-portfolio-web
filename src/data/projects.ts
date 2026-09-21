@@ -4,23 +4,26 @@ import ccHero from "../assets/images/ccHero.png";
 import ccProductos from "../assets/images/ccProductos.png";
 import ccVolumen from "../assets/images/ccVolumen.png";
 import ccCart from "../assets/images/ccCart.png";
-import ccP1 from "../assets/images/p1.png";
-import CCP2 from "../assets/images/p2.png";
+import ccP1 from "../assets/images/ccProductDetail1.png";
+import ccP2 from "../assets/images/ccProductDetail2.png";
 import ccPanel from "../assets/images/ccPanel.png";
-import ccEditar from "../assets/images/ccEditar.png";
+import ccEditar from "../assets/images/ccEditarP.png";
 import ccMobileHome from "../assets/images/ccMobileHome.png";
 import ccMobileProducts from "../assets/images/ccMobileProducts.png";
+import ccMobiles from "../assets/images/ccMobiles.png";
 
 //Protfolio imgs
 import portfolioThumbnail from "../assets/images/vc-thumbnail3.png";
-import pHero from "../assets/images/pHero.png";
+import vcHero from "../assets/images/vcHero.png";
 import vcTimeLine from "../assets/images/vcTimeline.png";
 import vcProjects from "../assets/images/vcProjects.png";
 import vcProjectDetail from "../assets/images/ccHero.png";
 import vcMobileW from "../assets/images/canva-vc.white1.png";
 import vcMovilB from "../assets/images/canva-vc-black1.png";
 
-import vcTech from "../assets/images/vc-tech.png";
+import vcTech from "../assets/images/vcTech.png";
+import vcExp from "../assets/images/vcExp.png";
+import vcMobiles from "../assets/images/vcMobiles.png";
 
 /**
  * A technical challenge solved within the project.
@@ -107,7 +110,7 @@ export const projects: Project[] = [
         title: "2. Carrito multi-variante por talla",
         description:
           "🔹 Modelé relaciones N:M con atributos en tablas pivote (product_user) para permitir que un mismo producto conviva en el carrito como múltiples variantes independientes por talla (ej. 50 unidades talla M y 20 talla L), validando la coherencia producto-talla antes de cada inserción.",
-        images: [ccCart],
+        images: [ccP2, ccCart],
       },
       {
         title: "3. Modelo de datos normalizado",
@@ -118,12 +121,13 @@ export const projects: Project[] = [
         title: "4. Panel de administración con RBAC",
         description:
           "🔹 Implementé un sistema de roles jerárquico (RBAC: Invitado, Cliente, Administrador) protegido con Middlewares personalizados, autenticación con hashing Bcrypt y protección CSRF en todos los formularios.",
-      },
+      images: [ccPanel, ccEditar]
+        },
       {
         title: "5. Interfaz responsive Mobile-First",
         description:
           "🔹 Construí una interfaz responsive Mobile-First con Blade y Tailwind CSS, añadiendo interactividad ligera con Alpine.js (selección obligatoria de tallas, flash messages, micro-animaciones en la vista de ofertas) sin necesidad de un framework JS pesado.",
-        images: [ccMobileHome, ccMobileProducts],
+        images: [ccMobiles],
         },
       {
         title: "6. Entorno contenerizado",
@@ -170,7 +174,7 @@ export const projects: Project[] = [
       "npm",
     ],
     thumbnail: portfolioThumbnail,
-    heroImage: pHero,
+    heroImage: vcHero,
     role: `
     🔹 Diseño y desarrollo de componentes reutilizables utilizando React y TypeScript.
     🔹 Implementación de un sistema de estilos personalizado mediante SASS y Material-UI.
@@ -185,7 +189,7 @@ export const projects: Project[] = [
         description: `🔹 Diseño de una arquitectura basada en componentes reutilizables y desacoplados, facilitando la mantenibilidad y la evolución del proyecto.
         🔹 Implementación de componentes clave como Project, ProjectDetail, ScrollToTop, entre otros, organizados para maximizar claridad y escalabilidad.
       `,
-        images: [vcTech],
+        images: [vcTech, vcExp],
       },
       {
         title: "2. Sistema de Estilos Personalizado",
@@ -212,7 +216,7 @@ export const projects: Project[] = [
         🔹 Implementación de prácticas de accesibilidad (A11Y) para garantizar una experiencia inclusiva.
         🔹 Construcción de una interfaz clara, navegable y centrada en la experiencia del usuario.
       `,
-      images: [vcMovilB, vcMobileW],
+      images: [vcMobiles],
       },
       {
         title: "6. Pruebas Unitarias",

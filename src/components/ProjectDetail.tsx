@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, Navigate, useParams } from "react-router-dom";
 import GitHubIcon from '@mui/icons-material/GitHub';
 import Chip from '@mui/material/Chip';
@@ -11,11 +11,34 @@ function ProjectDetail() {
   const { slug } = useParams<{ slug: string }>();
   const project = getProjectBySlug(slug);
 
+  // Image currently open in the lightbox (null = closed)
+  const [lightboxSrc, setLightboxSrc] = useState<string | null>(null);
+
   useEffect(() => {
     if (project) {
       document.title = `${project.title} | Vicente Codes`;
     }
   }, [project]);
+
+  // Close the lightbox with the Escape key.
+  useEffect(() => {
+    if (!lightboxSrc) return;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setLightboxSrc(null);
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    // Prevent background scrolling while the lightbox is open.
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = "";
+    };
+  }, [lightboxSrc]);
 
   // If the slug does not correspond to any known project, we return to the home page.
   if (!project) {
@@ -52,7 +75,8 @@ function ProjectDetail() {
         <img
           src={project.heroImage}
           alt={`Captura principal de ${project.title}`}
-          className="project-detail-hero-image"
+          className="project-detail-hero-image project-detail-zoomable"
+          onClick={() => setLightboxSrc(project.heroImage)}
         />
       )}
 
@@ -87,6 +111,8 @@ function ProjectDetail() {
                         key={index}
                         src={image}
                         alt={`${challenge.title} - imagen ${index + 1}`}
+                        className="project-detail-zoomable"
+                        onClick={() => setLightboxSrc(image)}
                       />
                     ))}
                   </div>
@@ -112,17 +138,31 @@ function ProjectDetail() {
       )}
 
       {project.repoUrl && (
-  <Button
-    href={project.repoUrl}
-    target="_blank"
-    rel="noopener noreferrer"
-    className="repo-button"
-    variant="contained"
-    startIcon={<GitHubIcon />}
-  >
-    Ver repositorio
-  </Button>
-)}
+        <Button
+          href={project.repoUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="repo-button"
+          variant="contained"
+          startIcon={<GitHubIcon />}
+        >
+          Ver repositorio
+        </Button>
+      )}
+
+      {lightboxSrc && (
+        <div
+          className="project-detail-lightbox-overlay"
+          onClick={() => setLightboxSrc(null)}
+        >
+          <img
+            src={lightboxSrc}
+            alt="Imagen ampliada"
+            className="project-detail-lightbox-image"
+            onClick={(event) => event.stopPropagation()}
+          />
+        </div>
+      )}
     </div>
   );
 }
