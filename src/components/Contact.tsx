@@ -21,13 +21,13 @@ function Contact() {
   const sendEmail = (e: any) => {
     e.preventDefault();
 
-    setNameError(name === '');
-    setEmailError(email === '');
-    setMessageError(message === '');
+    setNameError(!name.trim());
+    setEmailError(!email.trim());
+    setMessageError(!message.trim());
 
     /* Uncomment below if you want to enable the emailJS */
 
-    // if (name !== '' && email !== '' && message !== '') {
+    // if (name.trim() !== '' && email.trim() !== '' && message.trim() !== '') {
     //   var templateParams = {
     //     name: name,
     //     email: email,
@@ -67,32 +67,32 @@ function Contact() {
                 required
                 id="outlined-required"
                 label="Tu nombre"
-                placeholder="What's your name?"
+                placeholder="¿Cúal es tu nombre?"
                 value={name}
                 onChange={(e) => {
                   setName(e.target.value);
                 }}
                 error={nameError}
-                helperText={nameError ? "Please enter your name" : ""}
+                helperText={nameError ? "Por favor, ingresa tu nombre" : ""}
               />
               <TextField
                 required
                 id="outlined-required"
                 label="Email / Teléfono"
-                placeholder="How can I reach you?"
+                placeholder="¿Cómo puedo contactarte?"
                 value={email}
                 onChange={(e) => {
                   setEmail(e.target.value);
                 }}
                 error={emailError}
-                helperText={emailError ? "Please enter your email or phone number" : ""}
+                helperText={emailError ? "Por favor, ingresa un email o teléfono válido" : ""}
               />
             </div>
             <TextField
               required
               id="outlined-multiline-static"
               label="Mensaje"
-              placeholder="Send me any inquiries or questions"
+              placeholder="Enviame cualquier consulta o propuesta que tengas en mente"
               multiline
               rows={10}
               className="body-form"
@@ -101,7 +101,7 @@ function Contact() {
                 setMessage(e.target.value);
               }}
               error={messageError}
-              helperText={messageError ? "Please enter the message" : ""}
+              helperText={messageError ? "Por favor, ingresa un mensaje" : ""}
             />
             <Button variant="contained" endIcon={<SendIcon />} onClick={sendEmail}>
               Enviar

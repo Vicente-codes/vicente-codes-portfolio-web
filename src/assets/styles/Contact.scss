@@ -18,8 +18,19 @@
     color: white;
   }
 
-  fieldset {
-    background-color: white;
+  /*Apply white background to the input container without covering the text */
+  .MuiInputBase-root {
+    background-color: #ffffff;
+    color: #000000; /* Ensures written text is visible in dark mode */
+  }
+
+  /* Maintains legibility of MUI labels */
+  .MuiInputLabel-root {
+    color: #333333;
+
+    &.Mui-focused {
+      color: #2496ed; /* Label color when focusing */
+    }
   }
 }
 
