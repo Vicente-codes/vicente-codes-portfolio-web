@@ -25,6 +25,8 @@ function Home() {
             const element = document.getElementById(id);
             if (element) {
                 element.scrollIntoView({ behavior: 'smooth' });
+
+                window.history.replaceState(null, '', window.location.pathname + window.location.search);
             }
         }
     }, []);
