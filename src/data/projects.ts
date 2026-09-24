@@ -4,26 +4,20 @@ import ccHero from "../assets/images/ccHero.png";
 import ccProductos from "../assets/images/ccProductos.png";
 import ccVolumen from "../assets/images/ccVolumen.png";
 import ccCart from "../assets/images/ccCart.png";
-import ccP1 from "../assets/images/ccProductDetail1.png";
 import ccP2 from "../assets/images/ccProductDetail2.png";
 import ccPanel from "../assets/images/ccPanel.png";
 import ccEditar from "../assets/images/ccEditarP.png";
-import ccMobileHome from "../assets/images/ccMobileHome.png";
-import ccMobileProducts from "../assets/images/ccMobileProducts.png";
 import ccMobiles from "../assets/images/ccMobiles.png";
 
 //Protfolio imgs
 import portfolioThumbnail from "../assets/images/vc-thumbnail3.png";
 import vcHero from "../assets/images/vcHero.png";
-import vcTimeLine from "../assets/images/vcTimeline.png";
 import vcProjects from "../assets/images/vcProjects.png";
 import vcProjectDetail from "../assets/images/ccHero.png";
-import vcMobileW from "../assets/images/canva-vc.white1.png";
-import vcMovilB from "../assets/images/canva-vc-black1.png";
-
 import vcTech from "../assets/images/vcTech.png";
 import vcExp from "../assets/images/vcExp.png";
 import vcMobiles from "../assets/images/vcMobiles.png";
+import vcForm from "../assets/images/form2.png";
 
 /**
  * A technical challenge solved within the project.
@@ -143,7 +137,7 @@ export const projects: Project[] = [
     repoUrl: "https://github.com/Vicente-codes/laravel-myshop-custom-camis",
     collaborators: undefined,
   },
-  {
+{
     slug: "portfolio-web",
     title: "Vicente Codes",
     dates: "Jun 2026 - Sept 2026",
@@ -160,6 +154,7 @@ export const projects: Project[] = [
     🔹 Implementación de SASS (SCSS) para estilos personalizados y soporte de tema claro/oscuro.
     🔹 Integración de Material‑UI para componentes accesibles y consistentes.
     🔹 Implementación y configuración de React Router para navegación SPA fluida.
+    🔹 Desarrollo de un formulario de contacto funcional e integrado con EmailJS, con medidas de seguridad.
     🔹 Desarrollo de pruebas unitarias con Jest y React Testing Library para garantizar fiabilidad y calidad del código.
   `,
     stack: [
@@ -168,6 +163,7 @@ export const projects: Project[] = [
       "SASS",
       "Material-UI",
       "React Router",
+      "EmailJS",
       "Jest",
       "React Testing Library",
       "Node.js",
@@ -181,46 +177,71 @@ export const projects: Project[] = [
     🔹 Optimización de rendimiento, incluyendo carga de imágenes y assets.
     🔹 Diseño responsive y enfoque en UI/UX adaptable.
     🔹 Implementación de una navegación SPA con React Router.
+    🔹 Desarrollo de un formulario de contacto seguro con EmailJS, incluyendo validación, feedback visual y protección contra abuso.
     🔹 Escritura de pruebas unitarias con Jest y React Testing Library.
   `,
     challenges: [
       {
         title: "1. Arquitectura de Componentes Modular",
-        description: `🔹 Diseño de una arquitectura basada en componentes reutilizables y desacoplados, facilitando la mantenibilidad y la evolución del proyecto.
+        description: `
+        🔹 Diseño de una arquitectura basada en componentes reutilizables y desacoplados, facilitando la mantenibilidad y la evolución del proyecto.
+
         🔹 Implementación de componentes clave como Project, ProjectDetail, ScrollToTop, entre otros, organizados para maximizar claridad y escalabilidad.
       `,
         images: [vcTech, vcExp],
       },
       {
         title: "2. Sistema de Estilos Personalizado",
-        description: `🔹 Construcción de un sistema de estilos propio utilizando SASS (SCSS), con soporte para tema claro/oscuro y estilos modulares.
+        description: `
+        🔹 Construcción de un sistema de estilos propio utilizando SASS (SCSS), con soporte para tema claro/oscuro y estilos modulares.
+
         🔹 Integración de Material‑UI para incorporar componentes accesibles, consistentes y alineados con buenas prácticas de diseño.
       `,
       },
       {
         title: "3.Navegación SPA",
-        description: `🔹 Implementación de una navegación SPA fluida mediante React Router, mejorando la experiencia de usuario y reduciendo tiempos de carga.
+        description: `
+        🔹 Implementación de una navegación SPA fluida mediante React Router, mejorando la experiencia de usuario y reduciendo tiempos de carga.
+        
         🔹 Gestión de rutas dinámicas para mostrar páginas individuales de detalle de cada proyecto, permitiendo una presentación más completa y profesional del contenido.
       `,
         images: [vcProjects, vcProjectDetail],
       },
       {
         title: "4. Optimización de Rendimiento",
-        description: `🔹 Optimización de imágenes y assets para reducir el tamaño del bundle y mejorar el tiempo de carga.
+        description: `
+        🔹 Optimización de imágenes y assets para reducir el tamaño del bundle y mejorar el tiempo de carga.
+
         🔹 Aplicación de Lazy Loading en componentes e imágenes para mejorar el rendimiento percibido y la eficiencia del renderizado.
       `,
       },
+            {
+        title: "5. Formulario de Contacto Seguro con EmailJS",
+        description: `
+        🔹 Implementación de la lógica de envío mediante EmailJS, permitiendo comunicación directa por email sin necesidad de backend propio.
+
+        🔹 Aplicación de medidas de seguridad orientadas a un formulario público: honeypot anti-bots, control de tasa de envíos (rate limiting) tanto en cliente como en el propio servicio, sanitización de campos para prevenir inyección en cabeceras de email, y límites de longitud en todos los campos.
+
+        🔹 Diseño de un modal de resultado (éxito / error) con Material-UI, con distinto comportamiento según el caso: cierre automático en los envíos correctos y cierre manual en los errores, para asegurar que el usuario reciba feedback claro tras cada interacción.
+      `,
+      images: [vcForm],
+      },
       {
-        title: "5. Experiencia de Usuario Intuitiva",
-        description: `🔹 Diseño responsive adaptado a distintos dispositivos y resoluciones.
+        title: "6. Experiencia de Usuario Intuitiva",
+        description: `
+        🔹 Diseño responsive adaptado a distintos dispositivos y resoluciones.
+
         🔹 Implementación de prácticas de accesibilidad (A11Y) para garantizar una experiencia inclusiva.
+
         🔹 Construcción de una interfaz clara, navegable y centrada en la experiencia del usuario.
       `,
       images: [vcMobiles],
       },
       {
-        title: "6. Pruebas Unitarias",
-        description: `🔹 Desarrollo de pruebas unitarias con Jest y React Testing Library para asegurar la estabilidad y fiabilidad del código.
+        title: "7. Pruebas Unitarias",
+        description: `
+        🔹 Desarrollo de pruebas unitarias con Jest y React Testing Library para asegurar la estabilidad y fiabilidad del código.
+        
         🔹 Cobertura de componentes críticos como Project y ProjectDetail, validando su comportamiento y renderizado.
       `,
       },
@@ -229,11 +250,13 @@ export const projects: Project[] = [
 
 Desde el punto de vista técnico, el portafolio se apoya en una arquitectura basada en React + TypeScript, lo que garantiza tipado estático, robustez y un flujo de desarrollo más seguro. El sistema de estilos, construido con SASS (SCSS) y complementado con Material‑UI, proporciona una interfaz responsive, accesible y visualmente coherente, con soporte para tema claro/oscuro y componentes reutilizables. La navegación SPA con React Router permite una experiencia fluida y sin recargas, incluyendo páginas dinámicas de detalle para cada proyecto, lo que demuestra dominio en la gestión de rutas y vistas dentro de aplicaciones front‑end modernas.
 
+El portafolio incluye además un formulario de contacto totalmente funcional integrado con EmailJS, pensado específicamente para facilitar el contacto directo con reclutadores y colaboradores. Su implementación no se limita al envío de datos: incorpora medidas de seguridad propias de un formulario expuesto públicamente, como protección anti-bots mediante honeypot, control de tasa de envíos y sanitización de entradas, además de una experiencia de usuario cuidada con un modal de resultado que informa con claridad del éxito o error del envío. Este componente demuestra capacidad para llevar una funcionalidad más allá de su versión básica, cubriendo también los aspectos de seguridad y experiencia de usuario que exige un producto real.
+
 En términos de rendimiento, la aplicación incorpora optimizaciones como Lazy Loading, compresión de assets y carga eficiente de imágenes, reduciendo el peso del bundle y mejorando los tiempos de respuesta. Estas decisiones se reflejan en métricas positivas en Lighthouse, tanto en rendimiento como en accesibilidad, evidenciando un enfoque profesional en la calidad técnica del producto. Además, la implementación de prácticas de accesibilidad (A11Y) asegura que la plataforma sea inclusiva y usable por cualquier usuario, reforzando la atención al detalle y la sensibilidad por la experiencia final.
 
 La calidad del código se valida mediante pruebas unitarias con Jest y React Testing Library, cubriendo componentes críticos y asegurando que la aplicación se mantenga estable ante futuras iteraciones. Esto demuestra una adopción clara de buenas prácticas y una mentalidad orientada a la fiabilidad y la prevención de errores.
 
-El resultado es un portafolio moderno, mantenible y preparado para evolucionar, con una base tecnológica sólida que permite incorporar nuevas funcionalidades, mejorar la presentación de proyectos o ampliar la arquitectura sin comprometer la estabilidad. En conjunto, el proyecto refleja competencias clave para entornos profesionales: dominio de React, diseño de interfaces, optimización de rendimiento, accesibilidad, testing y capacidad para construir soluciones front‑end de calidad orientadas a producto.
+El resultado es un portafolio moderno, mantenible y preparado para evolucionar, con una base tecnológica sólida que permite incorporar nuevas funcionalidades, mejorar la presentación de proyectos o ampliar la arquitectura sin comprometer la estabilidad. En conjunto, el proyecto refleja competencias clave para entornos profesionales: dominio de React, diseño de interfaces, optimización de rendimiento, accesibilidad, testing, integración de servicios externos con criterios de seguridad, y capacidad para construir soluciones front‑end de calidad orientadas a producto.
   `,
     repoUrl: "https://github.com/tu-usuario/tu-repositorio-portfolio",
     collaborators: undefined,
