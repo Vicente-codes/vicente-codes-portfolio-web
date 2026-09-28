@@ -64,12 +64,22 @@
     margin: 28px 0 36px;
 }
 
-.project-detail-description {
+/* Estilos base unificados para descripciones y textos de sección */
+.project-detail-description,
+.project-detail-section-text {
     font-size: 1.125rem;
     line-height: 1.75;
     opacity: 0.75;
-    margin: 0 0 56px;
     text-align: justify;
+    white-space: pre-line;
+}
+
+.project-detail-description {
+    margin: 0 0 56px;
+}
+
+.project-detail-section-text {
+    margin: 0;
 }
 
 /*
@@ -97,7 +107,7 @@ aspect ratio, without the need for any cropping.
 }
 
 /*
-  Lightbox overlay. It covers the entire screen with a dark, 
+  Light-box overlay. It covers the entire screen with a dark, 
   semi-transparent background; the image is centered and constrained 
   so that it always appears in full, without cropping.
 */
@@ -164,14 +174,6 @@ aspect ratio, without the need for any cropping.
     font-weight: 600;
     letter-spacing: -0.01em;
     margin: 0 0 12px;
-}
-
-.project-detail-section-text {
-    font-size: 1.05rem;
-    line-height: 1.8;
-    opacity: 0.75;
-    margin: 0;
-    text-align: justify;
 }
 
 .project-detail-section-images {
@@ -241,11 +243,6 @@ from either photo is lost.
     box-shadow: 0 6px 18px rgba(36, 41, 46, 0.4);
     transform: translateY(-2px);
     color: #ffffff;
-}
-
-.project-detail-description,
-.project-detail-section-text {
-    white-space: pre-line;
 }
 
 @media screen and (max-width: 700px) {

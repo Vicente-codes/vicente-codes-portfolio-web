@@ -1,86 +1,171 @@
-# Developer Portfolio Template 🚀
+# Portfolio Web — Vicente Codes
 
-![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) ![Node.js](https://img.shields.io/badge/Node%20js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white) ![npm](https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white) ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E) ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white) ![Sass](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=reactrouter&logoColor=white)
+![Material UI](https://img.shields.io/badge/Material%20UI-007FFF?style=for-the-badge&logo=mui&logoColor=white)
+![Sass](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)
+![EmailJS](https://img.shields.io/badge/EmailJS-1769AA?style=for-the-badge&logo=minutemailer&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node%20js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
 
-## What is this?
+Portfolio personal interactivo desarrollado con **React** y **TypeScript**. El proyecto presenta mi perfil, experiencia, habilidades y proyectos mediante una interfaz responsive, navegación SPA, rutas dinámicas y soporte para temas claro y oscuro.
 
-This simple portfolio template is designed to showcase your past projects, career history, skill sets, and more.
+[🔗 Ver demo en vivo](#) <!-- Sustituir # por la URL de producción en Vercel -->
 
-View the [Demo](https://yujisatojr.github.io/react-portfolio-template/).
+![screenshot](./src/assets//images/vc/home4.png)
 
-**This template is free to use, and no attribution is required.** You can fork or download this repository to customize it for your own use. Please don't forget to leave a ⭐ if you like this portfolio!
+---
 
-![screenshot](./src/assets//images/screenshot.png)
+## Características
 
-## Features
+- Arquitectura modular basada en componentes React reutilizables.
+- Rutas SPA con `react-router-dom` para la página principal y la vista de detalle de cada proyecto.
+- Contenido de proyectos centralizado y tipado en `src/data/projects.ts`.
+- Diseño responsive con SCSS, transiciones, estados *hover*, sombras y adaptación de tipografías mediante `clamp()`.
+- Compatibilidad visual con temas claro y oscuro.
+- Galería de proyectos con visualización ampliada de imágenes mediante lightbox.
+- Formulario de contacto con EmailJS, validación de entradas y medidas de protección frente a envíos automatizados.
+- Despliegue previsto en Vercel.
 
-✅ Open source (free to use, no attribution required)  
-✅ Responsive design & mobile-friendly  
-✅ Supports both dark and light modes  
-✅ Highly customizable multi-component layout  
-✅ Built with modern technologies (React, TypeScript, JavaScript, and SCSS)  
+---
 
-## Quick Setup
+## Tecnologías
 
-1. Ensure you have [Node.js](https://nodejs.org/) installed. Check your installation by running:
+| Categoría | Tecnologías |
+| :--- | :--- |
+| Frontend | React 18, TypeScript, JavaScript (ES6+) |
+| Enrutamiento | React Router DOM v7 |
+| Interfaz y estilos | Material UI, SCSS / Sass |
+| Integración de email | EmailJS SDK |
+| Despliegue | Vercel |
+| Herramientas | Node.js, npm, Git |
 
-    ```bash
-    node -v
-    ```
+---
 
-2. In the project directory, install dependencies:
+## Estructura del proyecto
 
-    ```bash
-    npm install
-    ```
+```text
+.
+├── public/                      # Archivos estáticos públicos
+│   ├── _redirects               # Reglas de redirección heredadas para Netlify
+│   ├── favicon.ico              # Icono principal de la web
+│   ├── index.html               # Plantilla HTML principal
+│   └── manifest.json            # Metadatos de la Web App
+├── src/                         # Código fuente principal
+│   ├── assets/                  # Recursos visuales y estilos
+│   │   ├── images/              # Avatar, fondos y capturas de proyectos (cc/, vc/)
+│   │   └── styles/              # Hojas de estilo SCSS organizadas por componente
+│   ├── components/              # Componentes de React
+│   │   ├── Contact.tsx          # Formulario de contacto con integración de EmailJS
+│   │   ├── Expertise.tsx        # Sección de habilidades técnicas
+│   │   ├── Main.tsx             # Sección principal / vista de inicio
+│   │   ├── Navigation.tsx       # Barra de navegación responsive
+│   │   ├── Project.tsx          # Tarjetas y listado de proyectos
+│   │   ├── ProjectDetail.tsx    # Galería lightbox y detalle extendido
+│   │   └── Timeline.tsx         # Línea de tiempo de experiencia profesional
+│   ├── data/                    # Datos estáticos
+│   │   └── projects.ts          # Información centralizada y metadatos de proyectos
+│   ├── App.tsx                  # Componente raíz y configuración de rutas
+│   ├── index.tsx                # Punto de entrada principal de React
+│   └── index.scss               # Estilos globales de la aplicación
+├── .env.example                 # Plantilla de variables de entorno requeridas
+├── .gitignore                   # Archivos e historiales excluidos de Git
+├── package.json                 # Dependencias y scripts del proyecto
+├── README.md                    # Documentación principal
+└── tsconfig.json                # Configuración de TypeScript
+```
 
-3. Start the development server:
+> El archivo `public/_redirects` forma parte de la estructura original para despliegues en Netlify. El despliegue actual se realiza en Vercel, por lo que no es necesario para el enrutamiento de producción en esta plataforma.
 
-    ```bash
-    npm start
-    ```
+---
 
-4. Open [http://localhost:3000](http://localhost:3000) to view the app in the browser.
+## Instalación local
 
-5. Customize the template by navigating to the `/src/components` directory. Modify texts, pictures, and other information as needed.
+### Requisitos previos
 
-The page will reload if you make edits, and you will see any lint errors in the console.
+- Node.js 18 o superior
+- npm
 
-If you are interested in creating a mockup image like the ones from the personal projects section, I recommend [Genmoo](https://gemoo.com/tools/browser-mockup-generator/). This website lets you generate sleek looking browser mockups for free.
+Puedes comprobar las versiones instaladas con:
 
-## Deployment
+```bash
+node -v
+npm -v
+```
 
-You can choose your preferred service (e.g., [Netlify](https://www.netlify.com/), [Render](https://render.com/), [Heroku](https://www.heroku.com/)) for deployment. One of the easiest ways to host this portfolio is using GitHub Pages. Follow the instructions below for a production deploy.
+### Pasos
 
-1. **Set Up GitHub Repository**
+1. Clona el repositorio:
 
-    Create a new repository on GitHub for your portfolio app.
+```bash
+git clone https://github.com/tu-usuario/tu-repositorio.git
+cd tu-repositorio
+```
 
-2. **Configure `package.json`**
+2. Instala las dependencias:
 
-    Edit the following properties in your `package.json` file:
+```bash
+npm install
+```
 
-    ```json
-    {
-        "homepage": "https://yourusername.github.io/your-repo-name",
-        "scripts": {
-            "predeploy": "npm run build",
-            "deploy": "gh-pages -d build",
-            ...
-        }
-    }
-    ```
+3. Crea tu archivo de entorno a partir de la plantilla:
 
-    Replace `yourusername` with your GitHub username and `your-repo-name` with the name of your GitHub repository.
+```bash
+cp .env.example .env
+```
 
-3. **Deploy to GitHub Pages**
+4. Completa en `.env` las variables necesarias para EmailJS.
 
-    Run the following command to deploy your app:
+5. Inicia el entorno de desarrollo:
 
-    ```bash
-    npm run deploy
-    ```
+```bash
+npm run dev
+```
 
-4. **Access Your Deployed App**
+---
 
-    After successfully deploying, you can access your app at `https://yourusername.github.io/your-repo-name`.
+## Configuración de EmailJS
+
+1. Crea una cuenta en [EmailJS](https://www.emailjs.com/).
+2. Configura un servicio de correo electrónico (*Email Service*).
+3. Crea una plantilla con las variables utilizadas por el formulario, por ejemplo: `from_name`, `reply_to` y `message`.
+4. Añade el **Service ID**, **Template ID** y **Public Key** a tu archivo `.env`, utilizando los nombres definidos en `.env.example`.
+
+> No subas nunca el archivo `.env` al repositorio. Debe permanecer incluido en `.gitignore`.
+
+---
+
+## Despliegue en Vercel
+
+El proyecto se despliega en **Vercel**. Para desplegarlo desde GitHub:
+
+1. Sube el proyecto a un repositorio de GitHub.
+2. Accede a [Vercel](https://vercel.com/) e importa el repositorio.
+3. Verifica los comandos detectados por la plataforma, especialmente el comando de instalación y el de compilación definidos en `package.json`.
+4. Añade en **Settings > Environment Variables** las mismas variables de EmailJS que utilizas localmente.
+5. Ejecuta el despliegue. Vercel generará una URL de producción y volverá a desplegar automáticamente cada cambio enviado a la rama configurada.
+
+Para generar una compilación de producción en local:
+
+```bash
+npm run build
+```
+
+---
+
+## Créditos
+
+Este proyecto parte de la plantilla open source [react-portfolio-template](https://github.com/yujisatojr/react-portfolio-template), creada por [yujisatojr](https://github.com/yujisatojr).
+
+A partir de esta base, **Vicente Codes** ha reestructurado, rediseñado y ampliado la aplicación con las siguientes implementaciones:
+
+- **Arquitectura modular:** Organización de la interfaz en componentes React reutilizables y centralización tipada de los proyectos en `src/data/projects.ts`.
+- **Vistas dinámicas de proyectos:** Rutas y páginas de detalle generadas a partir del `slug` de cada proyecto, con galería de imágenes ampliable.
+- **Navegación SPA:** Implementación de rutas con `react-router-dom` v7, desplazamiento suave entre secciones, restauración de scroll y navegación de retorno desde el detalle de proyecto.
+- **Estilos y responsive:** Adaptación de SCSS por componentes, mejoras de layout, `clamp()`, `max-width`, transiciones, estados *hover* y compatibilidad con temas claro y oscuro.
+- **Integración de Material UI:** Uso de componentes de MUI en botones, campos y modales, coordinados con el sistema visual existente.
+- **Optimización y mantenimiento:** Eliminación de recursos, mocks, estilos y efectos redundantes; simplificación del estado y reducción de duplicaciones.
+- **Formulario de contacto:** Integración con EmailJS, validación de entradas, sanitización, límites de longitud, campo *honeypot*, control de tasa de envíos y feedback mediante modal.
+- **Experiencia de usuario:** Interfaz adaptable a móviles, bloques de contenido diferenciados, interacciones visuales y navegación orientada a facilitar la consulta del portfolio.
+- **Despliegue:** Configuración del proyecto para su despliegue en Vercel.

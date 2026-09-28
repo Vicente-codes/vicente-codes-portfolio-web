@@ -66,7 +66,7 @@ function ProjectDetail() {
 
         <div className="project-detail-stack">
           {project.stack.map((tech) => (
-            <Chip key={tech} label={tech} size="small" />
+            <Chip key={tech} label={tech} size="small" color="primary"/>
           ))}
         </div>
       </header>

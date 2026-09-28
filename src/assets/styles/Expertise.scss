@@ -96,9 +96,10 @@
 .flex-chips {
     line-height: 2;
     margin-top: auto; /* Empuja las chips al final del contenedor de la tarjeta */
+    color: inherit;
 
     .chip-title {
-        color: inherit;
+        color: white;
         padding-right: 10px;
     }
 }
