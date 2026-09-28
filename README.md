@@ -169,3 +169,6 @@ A partir de esta base, **Vicente Codes** ha reestructurado, rediseñado y amplia
 - **Formulario de contacto:** Integración con EmailJS, validación de entradas, sanitización, límites de longitud, campo *honeypot*, control de tasa de envíos y feedback mediante modal.
 - **Experiencia de usuario:** Interfaz adaptable a móviles, bloques de contenido diferenciados, interacciones visuales y navegación orientada a facilitar la consulta del portfolio.
 - **Despliegue:** Configuración del proyecto para su despliegue en Vercel.
+
+## Licencia
+Este proyecto se distribuye bajo la **Licencia MIT**. Consulta el archivo [LICENSE](./LICENSE) para más detalles.
