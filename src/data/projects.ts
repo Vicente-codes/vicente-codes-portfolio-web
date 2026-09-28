@@ -250,7 +250,7 @@ Desde el punto de vista técnico, el portafolio se apoya en una arquitectura bas
 El portafolio incluye además un formulario de contacto totalmente funcional integrado con EmailJS, pensado específicamente para facilitar el contacto directo con colaboradores. Su implementación no se limita al envío de datos: incorpora medidas de seguridad propias de un formulario expuesto públicamente, como protección anti-bots mediante honeypot, control de tasa de envíos y sanitización de entradas, además de una experiencia de usuario cuidada con un modal de resultado que informa con claridad del éxito o error del envío. 
 
 El resultado es una aplicación que combina presentación profesional, navegación fluida y una base técnica preparada para seguir incorporando proyectos, contenidos y mejoras sin modificar la estructura principal. El portfolio no solo muestra mi experiencia, sino también mi forma de trabajar con React, TypeScript, routing, responsive design, gestión del estado, integración de servicios externos y atención a la experiencia de usuario.`,
-    repoUrl: "https://github.com/tu-usuario/tu-repositorio-portfolio",
+    repoUrl: "https://github.com/Vicente-codes/vicente-codes-portfolio-web",
     collaborators: undefined,
   },
 ];

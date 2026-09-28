@@ -99,7 +99,7 @@ npm -v
 1. Clona el repositorio:
 
 ```bash
-git clone https://github.com/tu-usuario/tu-repositorio.git
+git clone https://github.com/Vicente-codes/vicente-codes-portfolio-web.git
 cd tu-repositorio
 ```
 
