@@ -240,7 +240,13 @@ Añadí animaciones, estados hover, botones consistentes y layouts adaptables a 
       },
       {
         title: "7. Despliegue",
-        description: `🔹Pendiente`,
+        description: `El proyecto está preparado para un despliegue en producción mediante GitHub y Vercel, conectando el repositorio con la plataforma de hosting para automatizar el proceso de integración y publicación.
+
+Configuré Vercel para detectar el proyecto directamente desde GitHub y ejecutar automáticamente el proceso de compilación cada vez que se incorporan cambios a la rama principal. De esta forma, el flujo de trabajo queda integrado con el control de versiones: después de validar una modificación localmente, basta con publicar el commit en el repositorio para iniciar un nuevo despliegue.
+
+También configuré las variables de entorno necesarias para la integración con EmailJS, manteniendo separados del código fuente el Service ID, el Template ID y la Public Key. Estas variables se gestionan desde la configuración de Vercel y se aplican a los entornos de producción y preview sin exponer sus valores en el repositorio.
+
+Como resultado, el portfolio está publicado en una URL pública y cuenta con un flujo de despliegue reproducible, automatizado y preparado para evolucionar junto con el proyecto. Con esta configuración se pretende demostrar experiencia práctica con Git, GitHub, gestión de variables de entorno, integración continua y publicación de aplicaciones frontend modernas.`,
       },
     ],
     result: `El proyecto culmina en un portafolio web profesional diseñado para presentar mis habilidades y proyectos de forma clara, moderna y optimizada. La plataforma actúa como un punto centralizado donde se muestra mi experiencia técnica, mi capacidad para estructurar aplicaciones React y mi enfoque en la calidad del código y la experiencia de usuario. Gracias a la arquitectura modular implementada, el sistema permite incorporar nuevos proyectos, secciones y mejoras sin comprometer la estabilidad ni la mantenibilidad.
