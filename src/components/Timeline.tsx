@@ -8,7 +8,7 @@ import {
   faWordpressSimple,
 } from '@fortawesome/free-brands-svg-icons'; 
 // Solid icons import (Fixed: faDatabase and faBrain are now imported from the correct package)
-import { faMicrochip, faPersonWalkingLuggage, faMapLocationDot } from '@fortawesome/free-solid-svg-icons';
+import { faMicrochip, faMapLocationDot } from '@fortawesome/free-solid-svg-icons';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import '../assets/styles/Timeline.scss';
