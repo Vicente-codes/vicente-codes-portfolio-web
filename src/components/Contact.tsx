@@ -217,7 +217,7 @@ function Contact() {
         <div className="contact_wrapper">
           <h1>Contacto</h1>
           <p>
-            ¿Tienes algún proyecto en mente? ¡Contacta y hagámoslo realidad!
+            ¿Tienes algún proyecto en mente?
           </p>
 
           <Box
