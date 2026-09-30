@@ -1,6 +1,6 @@
 //Custom Camis imgs
 import ccThumbnail from "../assets/images/cc/cc-thumbnailMobile3.png";
-import ccHero from "../assets/images/cc/ccHero.png";
+import ccHero from "../assets/images/cc/home1.png";
 import ccProductos from "../assets/images/cc/ccProductos.png";
 import ccVolumen from "../assets/images/cc/ccVolumen.png";
 import ccCart from "../assets/images/cc/ccCart.png";
@@ -8,6 +8,7 @@ import ccP2 from "../assets/images/cc/ccProductDetail2.png";
 import ccPanel from "../assets/images/cc/ccPanel.png";
 import ccEditar from "../assets/images/cc/ccEditarP.png";
 import ccMobiles from "../assets/images/cc/ccMobiles.png";
+import ccVideo from "../assets/videos/ccVideo.mp4";
 
 //Protfolio imgs
 import portfolioThumbnail from "../assets/images/vc/vc-thumbnail3.png";
@@ -48,6 +49,7 @@ export interface Project {
   thumbnail: string;
   /** Main image displayed right below the description */
   heroImage: string;
+  video?: string;
   /** Author's role and responsibilities in the project */
   role: string;
   challenges: ProjectChallenge[];
@@ -83,6 +85,7 @@ export const projects: Project[] = [
     ],
     thumbnail: ccThumbnail,
     heroImage: ccHero,
+    video: ccVideo,
     role: `Diseñé y desarrollé el ciclo de vida completo de la aplicación, desde el modelo de datos hasta el despliegue, aplicando el patrón MVC de Laravel con una separación estricta entre lógica de negocio, persistencia y presentación.
       
           🔹Desarrollo full-stack: Asumí el ciclo de vida completo del proyecto, desde el diseño del modelo de datos hasta el despliegue en producción, cubriendo frontend, backend y base de datos.

@@ -4,8 +4,8 @@
     text-align: left;
 
     /*
-      With clamp(), the horizontal padding is fixed and predictable: 
-      it does not depend on the parent's width, nor does it interact 
+      With clamp(), the horizontal padding is fixed and predictable:
+      it does not depend on the parent's width, nor does it interact
       poorly with max-width.
     */
     padding: 96px clamp(20px, 4vw, 64px);
@@ -84,9 +84,9 @@
 
 /*
   FIXED: no `max-height` or `object-fit: cover`. The image appears in full,
-without cropping, regardless of its original aspect ratio. `width: 100%` + `height: auto`
-already ensures it spans the full width of the column while maintaining its
-aspect ratio, without the need for any cropping.
+  without cropping, regardless of its original aspect ratio. `width: 100%` + `height: auto`
+  already ensures it spans the full width of the column while maintaining its
+  aspect ratio, without the need for any cropping.
 */
 .project-detail-hero-image {
     width: 100%;
@@ -94,6 +94,97 @@ aspect ratio, without the need for any cropping.
     border-radius: 16px;
     display: block;
     margin: 0 0 88px;
+}
+
+/*
+  The video uses its own wrapper so the play button and visual overlay
+  can be positioned above the poster without affecting the document flow.
+*/
+.project-detail-video-section {
+    width: 100%;
+    margin: 0 0 88px;
+}
+
+.project-detail-video-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 16px;
+    background-color: #111111;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+
+.project-detail-video {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    background-color: #111111;
+}
+
+/*
+  The gradient makes the poster look more clearly like a video preview.
+  pointer-events: none ensures the overlay does not block video controls
+  or the play button.
+*/
+.project-detail-video-wrapper::before {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.05) 0%,
+            rgba(0, 0, 0, 0.12) 55%,
+            rgba(0, 0, 0, 0.4) 100%
+        );
+    content: "";
+    pointer-events: none;
+}
+
+/*
+  The button is absolutely positioned relative to the video wrapper,
+  so it remains centered over the poster instead of appearing below it.
+*/
+.project-detail-video-play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 76px;
+    height: 76px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background-color: #24292e;
+    color: #ffffff;
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+    transition:
+        transform 0.25s ease,
+        background-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.project-detail-video-play-button svg {
+    font-size: 3rem;
+    margin-left: 4px;
+    color: #ffffff;
+}
+
+.project-detail-video-play-button:hover {
+    background-color: #444d56;
+    transform: translate(-50%, -50%) scale(1.08);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+}
+
+.project-detail-video-play-button:focus-visible {
+    outline: 3px solid #ffffff;
+    outline-offset: 4px;
 }
 
 .project-detail-zoomable {
@@ -107,8 +198,8 @@ aspect ratio, without the need for any cropping.
 }
 
 /*
-  Light-box overlay. It covers the entire screen with a dark, 
-  semi-transparent background; the image is centered and constrained 
+  Light-box overlay. It covers the entire screen with a dark,
+  semi-transparent background; the image is centered and constrained
   so that it always appears in full, without cropping.
 */
 .project-detail-lightbox-overlay {
@@ -125,8 +216,13 @@ aspect ratio, without the need for any cropping.
 }
 
 @keyframes project-detail-lightbox-fade-in {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 .project-detail-lightbox-image {
@@ -137,12 +233,6 @@ aspect ratio, without the need for any cropping.
     border-radius: 8px;
     box-shadow: 0 12px 48px rgba(0, 0, 0, 0.5);
     cursor: default;
-}
-
-@media screen and (max-width: 700px) {
-    .project-detail-lightbox-overlay {
-        padding: 16px;
-    }
 }
 
 .project-detail-role {
@@ -185,8 +275,8 @@ aspect ratio, without the need for any cropping.
 /*
 The individual image ("single") is no longer centered based on
 its native width. It now occupies 100% of the column, exactly like the
-text above it. This ensures the image's left and right edges
-always align with those of the paragraph.
+text above it. This ensures the image's left and right edges always
+align with those of the paragraph.
 */
 .project-detail-section-images.single {
     grid-template-columns: 1fr;
@@ -205,11 +295,11 @@ always align with those of the paragraph.
 
 /*
   Without `aspect-ratio` or `object-fit: cover`, which forced cropping
-when the two grid images didn't share the same aspect ratio. Each image
-takes up 100% of its column's width and its natural (proportional) height,
-without being cropped. If the two images have different heights, the grid
-will appear "staggered" rather than perfectly aligned, but no content
-from either photo is lost.
+  when the two grid images didn't share the same aspect ratio. Each image
+  takes up 100% of its column's width and its natural (proportional) height,
+  without being cropped. If the two images have different heights, the grid
+  will appear "staggered" rather than perfectly aligned, but no content
+  from either photo is lost.
 */
 .project-detail-section-images.grid img {
     width: 100%;
@@ -245,6 +335,7 @@ from either photo is lost.
     color: #ffffff;
 }
 
+/* Responsive layout for smaller screens */
 @media screen and (max-width: 700px) {
     .project-detail-container {
         padding-left: 5%;
@@ -252,9 +343,46 @@ from either photo is lost.
         max-width: 100%;
     }
 
+    .project-detail-container .back-button {
+        margin-bottom: 24px;
+        padding: 7px 14px;
+    }
+
+    .project-detail-container h1 {
+        font-size: clamp(2rem, 10vw, 2.75rem);
+    }
+
+    .project-detail-description,
+    .project-detail-section-text {
+        font-size: 1rem;
+        line-height: 1.65;
+    }
+
     .project-detail-hero-image {
         max-height: 360px;
         margin-bottom: 56px;
+    }
+
+    .project-detail-video-section {
+        margin-bottom: 56px;
+    }
+
+    .project-detail-video-wrapper {
+        border-radius: 10px;
+    }
+
+    .project-detail-video {
+        aspect-ratio: 16 / 9;
+    }
+
+    .project-detail-video-play-button {
+        width: 60px;
+        height: 60px;
+    }
+
+    .project-detail-video-play-button svg {
+        font-size: 2.35rem;
+        margin-left: 3px;
     }
 
     .project-detail-role,
@@ -268,5 +396,30 @@ from either photo is lost.
 
     .project-detail-section-images.grid {
         grid-template-columns: 1fr;
+    }
+
+    .project-detail-lightbox-overlay {
+        padding: 16px;
+    }
+
+    .project-detail-section-title {
+        font-size: clamp(1.35rem, 6vw, 1.75rem);
+    }
+
+    .project-detail-section-subtitle {
+        font-size: clamp(1.05rem, 5vw, 1.25rem);
+    }
+}
+
+/*
+  Respect users who prefer reduced motion by disabling decorative
+  transitions and animations where possible.
+*/
+@media (prefers-reduced-motion: reduce) {
+    .project-detail-video-play-button,
+    .project-detail-zoomable,
+    .project-detail-lightbox-overlay {
+        transition: none;
+        animation: none;
     }
 }
