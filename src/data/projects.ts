@@ -14,7 +14,7 @@ import ccVideo from "../assets/videos/ccVideo.mp4";
 import portfolioThumbnail from "../assets/images/vc/vc-thumbnail3.png";
 import vcHero from "../assets/images/vc/vcHero.png";
 import vcProjects from "../assets/images/vc/vcProjects.png";
-import vcProjectDetail from "../assets/images/cc/ccHero.png";
+import vcProjectDetail from "../assets/images/cc/ccHeroVideo.png";
 import vcTech from "../assets/images/vc/vcTech.png";
 import vcExp from "../assets/images/vc/vcExp.png";
 import vcMobiles from "../assets/images/vc/vcMobiles.png";
@@ -164,7 +164,7 @@ export const projects: Project[] = [
     🔹 Integración de Material‑UI para componentes accesibles y consistentes.
     🔹 Implementación y configuración de React Router para navegación SPA fluida.
     🔹 Desarrollo de un formulario de contacto funcional e integrado con EmailJS, con medidas de seguridad.
-    🔹 Desarrollo de pruebas unitarias con Jest y React Testing Library para garantizar fiabilidad y calidad del código.
+    🔹 Desarrollo de pruebas unitarias con Jest y React Testing Library.
   `,
     stack: [
       "React",
@@ -185,7 +185,8 @@ export const projects: Project[] = [
     🔹 Optimización de rendimiento, incluyendo carga de imágenes y assets.
     🔹 Diseño responsive y enfoque en UI/UX adaptable.
     🔹 Implementación de una navegación SPA con React Router.
-    🔹Desarrollo de un formulario de contacto seguro con EmailJS, incluyendo validación, feedback visual y protección contra abuso.
+    🔹 Desarrollo de un formulario de contacto seguro con EmailJS, incluyendo validación, modales y seguridad.
+    🔹 Implementación de un sistema multimedia opcional para mostrar vídeos en los proyectos.
     🔹 Escritura de pruebas unitarias con Jest y React Testing Library.
   `,
     challenges: [
@@ -238,6 +239,10 @@ Además, adapté los placeholders, las etiquetas y los mensajes de ayuda al espa
         description: `El usuario puede recorrer el portfolio de forma directa: acceder a las secciones principales, consultar proyectos, abrir sus imágenes en tamaño completo y volver a la lista de trabajos sin perder el contexto.
 
 Añadí animaciones, estados hover, botones consistentes y layouts adaptables a dispositivos móviles. La navegación utiliza desplazamiento suave, mientras que la información sobre mi experiencia, mis habilidades y mis proyectos se organiza en bloques diferenciados para facilitar su consulta.
+
+También incorporé un sistema multimedia opcional para las páginas de detalle de los proyectos. La arquitectura permite asociar un vídeo de recorrido únicamente a aquellos proyectos que lo necesiten, manteniendo la imagen principal como alternativa para el resto. Esta lógica se implementa mediante una propiedad opcional en el modelo de datos y renderizado condicional en React, evitando duplicar componentes o introducir comportamientos innecesarios en los proyectos que no incluyen vídeo.
+
+El reproductor utiliza una imagen poster, controles nativos, carga diferida y un botón de reproducción superpuesto con estilos responsive. De esta forma, el vídeo funciona como una demostración visual de la aplicación y, al mismo tiempo, mantiene una experiencia coherente en dispositivos de escritorio y móviles.
 `,
         images: [vcMobiles],
       },
@@ -256,9 +261,11 @@ Como resultado, el portfolio está publicado en una URL pública y cuenta con un
 
 Desde el punto de vista técnico, el portafolio se apoya en una arquitectura basada en React + TypeScript, lo que garantiza tipado estático, robustez y un flujo de desarrollo más seguro. El sistema de estilos, construido con SASS (SCSS) y complementado con Material‑UI, proporciona una interfaz responsive, accesible y visualmente coherente, con soporte para tema claro/oscuro y componentes reutilizables. La navegación SPA con React Router permite una experiencia fluida y sin recargas, incluyendo páginas dinámicas de detalle para cada proyecto.
 
-El portafolio incluye además un formulario de contacto totalmente funcional integrado con EmailJS, pensado específicamente para facilitar el contacto directo con colaboradores. Su implementación no se limita al envío de datos: incorpora medidas de seguridad propias de un formulario expuesto públicamente, como protección anti-bots mediante honeypot, control de tasa de envíos y sanitización de entradas, además de una experiencia de usuario cuidada con un modal de resultado que informa con claridad del éxito o error del envío. 
+Se incluye además un formulario de contacto totalmente funcional integrado con EmailJS, pensado específicamente para facilitar el contacto directo con colaboradores. Su implementación no se limita al envío de datos: incorpora medidas de seguridad propias de un formulario expuesto públicamente, como protección anti-bots mediante honeypot, control de tasa de envíos y sanitización de entradas, además de una experiencia de usuario cuidada con un modal de resultado que informa con claridad del éxito o error del envío. 
 
-El resultado es una aplicación que combina presentación profesional, navegación fluida y una base técnica preparada para seguir incorporando proyectos, contenidos y mejoras sin modificar la estructura principal. El portfolio no solo muestra mi experiencia, sino también mi forma de trabajar con React, TypeScript, routing, responsive design, gestión del estado, integración de servicios externos y atención a la experiencia de usuario.`,
+El resultado es una aplicación que combina presentación profesional, navegación fluida y una base técnica preparada para seguir incorporando proyectos, contenidos y mejoras sin modificar la estructura principal. La arquitectura también permite enriquecer cada proyecto con recursos multimedia opcionales, como vídeos de recorrido, sin afectar a los proyectos que únicamente utilizan imágenes.
+
+El portfolio muestra mi experiencia y mi forma de trabajar con React, TypeScript, routing, responsive design, renderizado condicional, gestión del estado, integración de servicios externos, optimización de assets y atención a la experiencia de usuario.`,
     repoUrl: "https://github.com/Vicente-codes/vicente-codes-portfolio-web",
     collaborators: undefined,
   },

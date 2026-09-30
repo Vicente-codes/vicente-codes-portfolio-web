@@ -13,7 +13,7 @@ Portfolio personal interactivo desarrollado con **React** y **TypeScript**. El p
 
 [🔗 Ver web en vivo](https://vicente-codes-portfolio-web.vercel.app/) 
 
-![screenshot](./src/assets//images/vc/home4.png)
+![screenshot](./src/assets/images/vc/home4.png)
 
 ---
 
@@ -25,8 +25,10 @@ Portfolio personal interactivo desarrollado con **React** y **TypeScript**. El p
 - Diseño responsive con SCSS, transiciones, estados *hover*, sombras y adaptación de tipografías mediante `clamp()`.
 - Compatibilidad visual con temas claro y oscuro.
 - Galería de proyectos con visualización ampliada de imágenes mediante lightbox.
+- Sistema multimedia opcional para mostrar vídeos de recorrido en las páginas de detalle de los proyectos.
+- Reproductor de vídeo responsive con imagen `poster`, controles nativos y botón de reproducción superpuesto.
 - Formulario de contacto con EmailJS, validación de entradas y medidas de protección frente a envíos automatizados.
-- Despliegue previsto en Vercel.
+- Despliegue automatizado mediante GitHub y Vercel.
 
 ---
 
@@ -37,6 +39,7 @@ Portfolio personal interactivo desarrollado con **React** y **TypeScript**. El p
 | Frontend | React 18, TypeScript, JavaScript (ES6+) |
 | Enrutamiento | React Router DOM v7 |
 | Interfaz y estilos | Material UI, SCSS / Sass |
+| Multimedia | HTML5 Video, MP4 |
 | Integración de email | EmailJS SDK |
 | Despliegue | Vercel |
 | Herramientas | Node.js, npm, Git |
@@ -55,7 +58,8 @@ Portfolio personal interactivo desarrollado con **React** y **TypeScript**. El p
 ├── src/                         # Código fuente principal
 │   ├── assets/                  # Recursos visuales y estilos
 │   │   ├── images/              # Avatar, fondos y capturas de proyectos (cc/, vc/)
-│   │   └── styles/              # Hojas de estilo SCSS organizadas por componente
+│   │   ├── styles/              # Hojas de estilo SCSS organizadas por componente
+│   │   └── videos/              # Vídeos de proyectos
 │   ├── components/              # Componentes de React
 │   │   ├── Contact.tsx          # Formulario de contacto con integración de EmailJS
 │   │   ├── Expertise.tsx        # Sección de habilidades técnicas
@@ -100,7 +104,7 @@ npm -v
 
 ```bash
 git clone https://github.com/Vicente-codes/vicente-codes-portfolio-web.git
-cd tu-repositorio
+cd vicente-codes-portfolio-web
 ```
 
 2. Instala las dependencias:
@@ -136,6 +140,27 @@ npm run dev
 
 ---
 
+## Sistema multimedia
+
+Las páginas de detalle admiten vídeos de recorrido de forma opcional. La propiedad `video` del modelo de proyecto no es obligatoria:
+
+```typescript
+video?: string;
+```
+
+Cuando un proyecto incluye esta propiedad, `ProjectDetail.tsx` muestra un reproductor HTML5 con:
+
+- Imagen `poster` basada en la imagen principal del proyecto.
+- Controles nativos de reproducción.
+- Carga controlada mediante `preload="none"`.
+- Botón de reproducción superpuesto.
+- Diseño responsive para escritorio y dispositivos móviles.
+- Formato MP4 compatible con navegadores modernos.
+
+Los proyectos que no incluyen la propiedad `video` continúan mostrando su imagen principal mediante el comportamiento original.
+
+---
+
 ## Despliegue en Vercel
 
 El proyecto se despliega en **Vercel**. Para desplegarlo desde GitHub:
@@ -168,7 +193,9 @@ A partir de esta base, **Vicente Codes** ha reestructurado, rediseñado y amplia
 - **Optimización y mantenimiento:** Eliminación de recursos, mocks, estilos y efectos redundantes; simplificación del estado y reducción de duplicaciones.
 - **Formulario de contacto:** Integración con EmailJS, validación de entradas, sanitización, límites de longitud, campo *honeypot*, control de tasa de envíos y feedback mediante modal.
 - **Experiencia de usuario:** Interfaz adaptable a móviles, bloques de contenido diferenciados, interacciones visuales y navegación orientada a facilitar la consulta del portfolio.
-- **Despliegue:** Configuración del proyecto para su despliegue en Vercel.
+- **Sistema multimedia opcional:** Implementación de vídeos de recorrido asociados a cada proyecto mediante una propiedad opcional `video` y renderizado condicional en `ProjectDetail.tsx`.
+- **Reproductor responsive:** Uso de HTML5 Video, imagen `poster`, controles nativos, botón de reproducción superpuesto y estilos adaptados a dispositivos móviles.
+- **Despliegue:** Integración con GitHub y Vercel para automatizar la compilación y publicación de nuevas versiones.
 
 ## Licencia
 Este proyecto se distribuye bajo la **Licencia MIT**. Consulta el archivo [LICENSE](./LICENSE) para más detalles.
