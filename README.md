@@ -11,7 +11,10 @@
 
 Portfolio personal interactivo desarrollado con **React** y **TypeScript**. El proyecto presenta mi perfil, experiencia, habilidades y proyectos mediante una interfaz responsive, navegación SPA, rutas dinámicas y soporte para temas claro y oscuro.
 
-[🔗 Ver web en vivo](https://vicente-codes-portfolio-web.vercel.app/) 
+## Demo
+
+🔗 **[Abrir portfolio online →](https://vicente-codes-portfolio-web.vercel.app/)**
+
 
 ![screenshot](./src/assets/images/vc/home4.png)
 
