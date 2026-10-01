@@ -80,7 +80,7 @@ function Timeline() {
             <h4 className="vertical-timeline-element-subtitle">Freelance (Reino Unido)</h4>
             <p>
               Onboarding e integración de estudiantes en instituciones educativas del Reino Unido (residencias, academias, universidades). 
-              Gestión de stakeholders, resolución de incidencias bajo presión, comunicación intercultural y priorización de tareas en entornos multilingües.
+              Gestión de stakeholders, resolución de incidencias, comunicación intercultural y priorización de tareas en entornos multilingües.
             </p>
           </VerticalTimelineElement>
 

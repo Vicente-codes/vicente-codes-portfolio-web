@@ -67,7 +67,7 @@ export const projects: Project[] = [
     dates: "(Oct 2025 - Feb 2026)",
     subtitle: "E-commerce B2B/B2C a medida (Laravel + Docker)",
     shortDescription:
-      "E-commerce a medida desarrollado con Laravel 12 para gestionar catálogo, carrito multi-variante y reglas de precios dinámicos por volumen (B2B).",
+      "E-commerce a medida desarrollado con PHP (Laravel 12) y desplegado con Docker. Permite gestionar catálogo, carrito multi-variante y reglas de precios dinámicos por volumen (B2B).",
     fullDescription: `Desarrollo integral de una plataforma de e‑commerce a medida para Custom Camis, empresa de artes gráficas especializada en la personalización de camisetas bajo demanda. El proyecto sustituye soluciones CMS estándar como Shopify o WooCommerce por una arquitectura propia diseñada para resolver un reto de negocio real: operar simultáneamente como tienda minorista (B2C) y plataforma mayorista (B2B), garantizando una experiencia fluida para consumidores y, al mismo tiempo, soportando la complejidad de las transacciones corporativas.
       
       A nivel tecnológico, la solución se construyó sobre PHP + Laravel siguiendo una arquitectura MVC escalable, con una separación estricta entre lógica de negocio, persistencia y presentación. El proyecto incorpora un modelo de datos relacional en MySQL capaz de gestionar relaciones complejas con atributos (variantes de talla y color), un sistema de roles jerárquico RBAC (Invitado, Cliente y Admin) para proteger áreas críticas y un entorno de despliegue profesional basado en Docker y Laravel Sail, asegurando consistencia entre desarrollo y producción.
@@ -206,7 +206,7 @@ A partir de esa base, realicé ajustes en los layouts responsive, el espaciado y
 También integré componentes de Material UI en botones y campos del formulario, coordinando sus estilos con las reglas SCSS existentes para mantener una presentación coherente. Todas las implementaciones que desarrollé tienen en cuenta los dos modos de visualización disponibles, claro y oscuro, para que los componentes mantengan una apariencia legible y consistente independientemente del tema seleccionado.`,
       },
       {
-        title: "3.Navegación SPA",
+        title: "3. Navegación SPA",
         description: `Implementé una navegación SPA con react-router-dom, incluyendo rutas para la página principal y para las vistas de detalle de cada proyecto. También actualicé la dependencia a react-router-dom v7 y revisé la configuración del router para mantener la navegación operativa en producción.
 
 Añadí un componente ScrollToTop para reiniciar la posición del viewport al cambiar de vista y configuré la navegación de retorno desde las páginas de detalle hacia la sección de proyectos. En la página principal incorporé desplazamiento suave entre secciones y actualicé la URL sin añadir hashes innecesarios. `,
