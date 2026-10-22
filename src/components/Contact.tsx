@@ -161,7 +161,7 @@ function Contact() {
     if (!SERVICE_ID || !TEMPLATE_ID || !PUBLIC_KEY) {
       setStatus("error");
       setErrorMessage(
-        "El formulario no está configurado correctamente. Inténtalo más tarde.",
+        "El formulario está fuera de servicio temporalmente. Inténtalo más tarde.",
       );
       setModalResult("error");
       setModalOpen(true);

@@ -16,7 +16,7 @@ Portfolio personal interactivo desarrollado con **React** y **TypeScript**. El p
 🔗 **[Abrir portfolio online →](https://vicente-codes-portfolio-web.vercel.app/)**
 
 
-![screenshot](./src/assets/images/vc/home4.png)
+![screenshot](./src/assets/images/vc/vcHero.png)
 
 ---
 
@@ -127,7 +127,7 @@ cp .env.example .env
 5. Inicia el entorno de desarrollo:
 
 ```bash
-npm run dev
+npm start
 ```
 
 ---

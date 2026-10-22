@@ -8,13 +8,15 @@ import ccP2 from "../assets/images/cc/ccProductDetail2.png";
 import ccPanel from "../assets/images/cc/ccPanel.png";
 import ccEditar from "../assets/images/cc/ccEditarP.png";
 import ccMobiles from "../assets/images/cc/ccMobiles.png";
+
+//Custom Camis vds
 import ccVideo from "../assets/videos/ccVideo.mp4";
 
 //Protfolio imgs
 import portfolioThumbnail from "../assets/images/vc/vc-thumbnail3.png";
 import vcHero from "../assets/images/vc/vcHero.png";
 import vcProjects from "../assets/images/vc/vcProjects.png";
-import vcProjectDetail from "../assets/images/cc/ccHeroVideo.png";
+import vcProjectDetail from "../assets/images/vc/project-detail.png";
 import vcTech from "../assets/images/vc/vcTech.png";
 import vcExp from "../assets/images/vc/vcExp.png";
 import vcMobiles from "../assets/images/vc/vcMobiles.png";
