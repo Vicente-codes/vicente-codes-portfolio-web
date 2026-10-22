@@ -326,7 +326,7 @@ function ProjectDetail() {
               <video
                 ref={videoRef}
                 className="project-detail-video"
-                controls
+                controls={isVideoPlaying}
                 playsInline
                 preload="none"
                 poster={project.heroImage}
@@ -351,13 +351,6 @@ function ProjectDetail() {
                   >
                     <PlayArrowIcon aria-hidden="true" />
                   </button>
-
-                  <span
-                    className="project-detail-video-overlay__label"
-                    aria-hidden="true"
-                  >
-                    Reproducir recorrido
-                  </span>
                 </div>
               )}
             </div>
