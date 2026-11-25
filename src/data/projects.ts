@@ -1,13 +1,13 @@
 //Custom Camis imgs
-import ccThumbnail from "../assets/images/cc/cc-thumbnailMobile3.png";
-import ccHero from "../assets/images/cc/home1.png";
+import ccThumbnail from "../assets/images/cc/cc-thumbnailMobile4.png";
+import ccHero from "../assets/images/cc/home3.png";
 import ccProductos from "../assets/images/cc/ccProductos.png";
 import ccVolumen from "../assets/images/cc/ccVolumen.png";
 import ccCart from "../assets/images/cc/ccCart.png";
 import ccP2 from "../assets/images/cc/ccProductDetail2.png";
 import ccPanel from "../assets/images/cc/ccPanel.png";
 import ccEditar from "../assets/images/cc/ccEditarP.png";
-import ccMobiles from "../assets/images/cc/ccMobiles.png";
+import ccMobiles from "../assets/images/cc/ccMoviles2.png";
 
 //Custom Camis vds
 import ccVideo from "../assets/videos/ccVideo.mp4";
