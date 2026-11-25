@@ -37,15 +37,45 @@
     }
 
     p {
+        font-family: var(--font-mono);
+        font-weight: 500;
         font-size: 1.5em;
+        letter-spacing: 0.02em;
         margin-block-start: 0px;
         margin-block-end: 0px;
+
+        &::after {
+            content: "_";
+            display: inline-block;
+            margin-left: 0.08em;
+            animation: main-cursor-blink 1.1s steps(1, end) infinite;
+        }
     }
 
     h1 {
+        font-family: var(--font-display);
+        font-weight: 700;
         font-size: 5em;
+        letter-spacing: -0.03em;
+        line-height: 1.05;
         margin-block-start: 0px;
         margin-block-end: 0px;
+    }
+}
+
+@keyframes main-cursor-blink {
+    0%, 49% {
+        opacity: 1;
+    }
+
+    50%, 100% {
+        opacity: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .about-section .content p::after {
+        animation: none;
     }
 }
 
