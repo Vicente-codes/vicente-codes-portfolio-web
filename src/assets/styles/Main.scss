@@ -44,12 +44,41 @@
         margin-block-start: 0px;
         margin-block-end: 0px;
 
-        &::after {
-            content: "_";
-            display: inline-block;
-            margin-left: 0.08em;
+        &.is-typing .typewriter__cursor::after {
+            animation: none;
+            opacity: 1;
+        }
+
+        &.is-done .typewriter__cursor::after {
             animation: main-cursor-blink 1.1s steps(1, end) infinite;
         }
+    }
+
+    .typewriter__grid {
+        display: inline-grid;
+        max-width: 100%;
+        vertical-align: top;
+    }
+
+    .typewriter__ghost,
+    .typewriter__typed {
+        grid-area: 1 / 1;
+    }
+
+    .typewriter__ghost {
+        visibility: hidden;
+    }
+
+    .typewriter__cursor {
+        display: inline-block;
+        width: 0;
+        overflow: visible;
+    }
+
+    .typewriter__cursor::after {
+        content: "_";
+        display: inline-block;
+        margin-left: 0.08em;
     }
 
     h1 {
@@ -74,7 +103,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .about-section .content p::after {
+    .about-section .content p.is-done .typewriter__cursor::after {
         animation: none;
     }
 }
