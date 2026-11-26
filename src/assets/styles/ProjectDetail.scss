@@ -158,8 +158,9 @@
     .project-detail-header__title {
         margin: 0;
         color: var(--pd-text);
+        font-family: var(--font-display);
         font-size: clamp(2.5rem, 6vw, 4.25rem);
-        font-weight: 800;
+        font-weight: 700;
         letter-spacing: -0.04em;
         line-height: 1.02;
         text-wrap: balance;
@@ -453,6 +454,7 @@
         gap: 12px;
         margin: 0 0 clamp(16px, 2.5vw, 24px);
         color: var(--pd-text);
+        font-family: var(--font-display);
         font-size: clamp(1.5rem, 3vw, 2rem);
         font-weight: 700;
         letter-spacing: -0.025em;
@@ -588,15 +590,18 @@
         border-radius: 12px;
         background-color: var(--pd-accent-soft);
         color: var(--pd-accent);
-        font-size: 0.78rem;
-        font-weight: 800;
-        letter-spacing: 0.04em;
+        font-family: var(--font-display);
+        font-size: 0.9rem;
+        font-variant-numeric: tabular-nums;
+        font-weight: 700;
+        letter-spacing: 0.02em;
         line-height: 1;
     }
 
     .project-detail-challenge__title {
         margin: 2px 0 0;
         color: var(--pd-text);
+        font-family: var(--font-display);
         font-size: clamp(1.12rem, 2.2vw, 1.35rem);
         font-weight: 700;
         letter-spacing: -0.015em;
@@ -974,7 +979,7 @@
             min-width: 34px;
             height: 34px;
             border-radius: 10px;
-            font-size: 0.72rem;
+            font-size: 0.82rem;
         }
 
         .project-detail-challenges__heading {
@@ -1050,4 +1055,16 @@
             transition: none;
         }
     }
+}
+
+/* ==========================================================================
+   Micro-labels (mono)
+   Standalone block: delete it to revert these labels to the body font.
+   ========================================================================== */
+
+.project-detail-container .project-detail-dates,
+.project-detail-container .project-detail-stack__label,
+.project-detail-container .project-detail-challenges__count {
+    font-family: var(--font-mono);
+    font-weight: 500;
 }

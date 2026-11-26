@@ -1,6 +1,6 @@
 .vertical-timeline span {
     color: white;
-    font-family: 'Courier Prime', monospace;
+    font-family: var(--font-mono);
 }
 
 .vertical-timeline p {
@@ -20,6 +20,20 @@
     color: rgb(39, 40, 34);
 }
 
+.vertical-timeline-element .vertical-timeline-element-title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+}
+
+.vertical-timeline-element .vertical-timeline-element-subtitle {
+    font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+}
+
 .vertical-timeline-element span {
     color: rgb(39, 40, 34);
 }
@@ -33,12 +47,14 @@
 }
 
 .timeline-date-highlight {
-  font-size: 1.3rem !important; 
-  font-weight: 700 !important;   
-  color: #738788 !important;     
-  opacity: 1 !important;         
+  font-size: clamp(1rem, 1.4vw, 1.2rem) !important;
+  font-weight: 500 !important;
+  color: #738788 !important;
+  opacity: 1 !important;
+  letter-spacing: -0.01em;
+  overflow-wrap: break-word;
 
   // --- ALIGNMENT DISPLACEMENT FIX ---
   padding-top: 12px !important;       // Removes the top spacing that pushes the date down
-  line-height: 1em !important;       // Reduces line height to prevent taking up extra space
+  line-height: 1.3 !important;        // Keeps wrapped dates readable with the mono font
 }

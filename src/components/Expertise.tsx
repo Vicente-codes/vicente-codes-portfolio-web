@@ -86,7 +86,7 @@ function Expertise() {
   return (
     <div className="container" id="expertise">
       <div className="skills-container">
-        <h1>Tecnologías</h1>
+        <h1 className="section-title">Tecnologías</h1>
         <div className="skills-grid">
           
           {/* 1. FRONT-END */}

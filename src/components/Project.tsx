@@ -6,7 +6,7 @@ import '../assets/styles/Project.scss';
 function Project() {
     return (
         <div className="projects-container" id="projects">
-            <h1>Proyectos Personales</h1>
+            <h1 className="section-title">Proyectos Personales</h1>
             <div className="projects-grid">
                 {projects.map((project) => (
                     <div className="project-card" key={project.slug}>

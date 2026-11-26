@@ -215,7 +215,7 @@ function Contact() {
     <div id="contact">
       <div className="items-container">
         <div className="contact_wrapper">
-          <h1>Contacto</h1>
+          <h1 className="section-title">Contacto</h1>
           <p>
             ¿Tienes algún proyecto en mente?
           </p>

@@ -47,7 +47,11 @@
 .projects-container .projects-grid .project-card h2 {
     margin-top: 8px;
     margin-bottom: 12px;
+    font-family: var(--font-display);
     font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.25;
 }
 
 .projects-container .projects-grid .project-card p {

@@ -34,9 +34,10 @@
   }
 }
 
-label {
+.contact_wrapper label {
   font-size: 1.2rem;
-  font-family: 'DomaineDispNar-Medium', sans-serif;
+  font-family: var(--font-display);
+  font-weight: 500;
 }
 
 .form-flex {
@@ -56,4 +57,10 @@ form {
 .body-form {
   width: 100% !important;
   margin-bottom: 15px !important;
+}
+
+@media screen and (max-width: 567px) {
+  .form-flex {
+    flex-direction: column;
+  }
 }
