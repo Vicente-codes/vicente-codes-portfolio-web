@@ -1,0 +1,67 @@
+/* ==========================================================================
+   Shared gradient button
+   Single source of truth for the primary gradient buttons ("Visitar la web",
+   "Volver a proyectos" and "Enviar"). Include it inside a selector with
+   enough specificity to beat the global `a` / `button` rules in index.scss:
+
+       .my-button.MuiButton-root {
+           @include gradient-button(12px 28px, 1rem);
+       }
+   ========================================================================== */
+
+@mixin gradient-button($padding: 12px 28px, $font-size: 1rem) {
+    padding: $padding;
+    border: 0;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #2496ed, #2ec5ca);
+    color: #ffffff;
+    font-family: var(--font-display);
+    font-size: $font-size;
+    font-weight: 700;
+    text-transform: none;
+    box-shadow: 0 8px 24px rgba(36, 150, 237, 0.35);
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+        filter 0.25s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease;
+
+    /* White in every state: index.scss turns `a:hover` turquoise. */
+    &:visited,
+    &:focus {
+        color: #ffffff;
+    }
+
+    &:hover {
+        color: #ffffff;
+        filter: brightness(1.08);
+        transform: translateY(-2px);
+    }
+
+    &:focus-visible {
+        outline: 2px solid var(--pd-accent, #2ec5ca);
+        outline-offset: 3px;
+        color: #ffffff;
+    }
+
+    /* Disabled: flat, dimmed and non-interactive. */
+    &:disabled,
+    &.Mui-disabled {
+        background: linear-gradient(135deg, #2496ed, #2ec5ca);
+        box-shadow: none;
+        color: #ffffff;
+        cursor: not-allowed;
+        filter: none;
+        opacity: 0.6;
+        pointer-events: auto;
+        transform: none;
+    }
+
+    &:disabled:hover,
+    &.Mui-disabled:hover {
+        box-shadow: none;
+        filter: none;
+        transform: none;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        transition: none;
+    }
+}

@@ -333,6 +333,7 @@ function Contact() {
 
             <Button
               type="submit"
+              className="send-button"
               variant="contained"
               endIcon={
                 isSending ? (

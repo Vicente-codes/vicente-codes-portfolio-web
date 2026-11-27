@@ -2,6 +2,8 @@
    Project detail page
    ========================================================================== */
 
+@use "./buttons" as *;
+
 .project-detail-container {
     /* Design tokens ------------------------------------------------------- */
     --pd-surface: rgba(255, 255, 255, 0.035);
@@ -82,16 +84,7 @@
     .back-button.MuiButton-root {
         align-self: flex-start;
         margin-bottom: 32px;
-        padding: 8px 18px;
-        border: 0;
-        border-radius: 8px;
-        background-color: #2496ed;
-        color: #ffffff;
-        font-size: 0.875rem;
-        font-weight: 600;
-        text-transform: none;
-        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
-        transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        @include gradient-button(8px 18px, 0.875rem);
 
         .MuiButton-startIcon {
             margin-right: 8px;
@@ -100,18 +93,6 @@
 
         svg {
             font-size: 1.1rem;
-        }
-
-        &:hover {
-            background-color: #2ec5ca;
-            color: #ffffff;
-            box-shadow: 0 6px 18px rgba(37, 99, 235, 0.35);
-            transform: translateY(-2px);
-        }
-
-        &:focus-visible {
-            outline: 2px solid var(--pd-accent);
-            outline-offset: 3px;
         }
     }
 
@@ -146,6 +127,24 @@
         &:focus-visible {
             outline: 2px solid var(--pd-accent);
             outline-offset: 3px;
+        }
+    }
+
+    /* Live site button ---------------------------------------------------- */
+    .project-detail-live {
+        margin-top: clamp(20px, 3vw, 28px);
+    }
+
+    .live-button.MuiButton-root {
+        @include gradient-button(12px 28px, 1rem);
+
+        .MuiButton-endIcon {
+            margin-right: -4px;
+            margin-left: 10px;
+
+            svg {
+                font-size: 1.2rem;
+            }
         }
     }
 
@@ -1021,6 +1020,10 @@
 @media screen and (max-width: 480px) {
     .project-detail-container {
         .project-detail-stack__label {
+            width: 100%;
+        }
+
+        .live-button.MuiButton-root {
             width: 100%;
         }
 

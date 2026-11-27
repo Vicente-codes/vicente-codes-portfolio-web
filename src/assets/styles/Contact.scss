@@ -1,3 +1,5 @@
+@use "./buttons" as *;
+
 .contact_wrapper svg {
   font-size: 1em;
   vertical-align: middle;
@@ -7,15 +9,9 @@
 .contact-form {
   padding-top: 20px;
 
-  button {
+  .send-button.MuiButton-root {
+    @include gradient-button(10px 24px, 0.95rem);
     float: right;
-    background-color: #2496ed;
-    color: #ffffff;
-  }
-
-  button:hover {
-    background-color: #2ec5ca;
-    color: white;
   }
 
   /*Apply white background to the input container without covering the text */
