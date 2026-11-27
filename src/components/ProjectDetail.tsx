@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { Link, Navigate, useParams } from "react-router-dom";
 import GitHubIcon from "@mui/icons-material/GitHub";
+import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import Chip from "@mui/material/Chip";
 import { getProjectBySlug } from "../data/projects";
 import "../assets/styles/ProjectDetail.scss";
@@ -295,6 +296,23 @@ function ProjectDetail() {
         )}
 
         <p className="project-detail-header__subtitle">{project.subtitle}</p>
+
+        {project.liveUrl && (
+          <div className="project-detail-live">
+            <Button
+              href={project.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="live-button"
+              variant="contained"
+              size="large"
+              endIcon={<OpenInNewIcon />}
+              aria-label={`Visitar la web de ${project.title} (se abre en una pestaña nueva)`}
+            >
+              Visitar la web
+            </Button>
+          </div>
+        )}
 
         <div className="project-detail-stack">
           <span className="project-detail-stack__label">

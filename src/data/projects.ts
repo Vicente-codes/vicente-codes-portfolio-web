@@ -58,6 +58,8 @@ export interface Project {
   /** Final result / impact of the project */
   result: string;
   repoUrl: string;
+  /** URL de la web desplegada; si existe, ProjectDetail muestra el botón de visita */
+  liveUrl?: string;
   /** Collaborators or mentors, optional if the project was individual */
   collaborators?: string;
 }
@@ -148,6 +150,8 @@ export const projects: Project[] = [
 
             El resultado es una plataforma modular, escalable y preparada para evolucionar, con una base tecnológica que permite incorporar futuras funcionalidades como la personalización de diseños por parte del usuario, nuevas reglas de negocio o ampliaciones del catálogo sin comprometer la estabilidad del sistema.`,
     repoUrl: "https://github.com/Vicente-codes/laravel-myshop-custom-camis",
+    liveUrl:
+      "https://laravel-myshop-custom-camis-production-vq5frf.laravel.cloud/",
     collaborators: undefined,
   },
   {
